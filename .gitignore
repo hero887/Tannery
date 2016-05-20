@@ -1,4 +1,8 @@
 /*
 !src/*
 !build.gradle
+!*LICENSE*
+!*License*
+!README*
+!gradlew*
 .DS_Store
