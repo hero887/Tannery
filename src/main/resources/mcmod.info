@@ -1,0 +1,16 @@
+[
+{
+  "modid": "tannery",
+  "name": "Tannery",
+  "description": "More realistic leather that involves tanning animal hides.,
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Hero887, SoggyMustache, LewisMcReu, TheJurassicAlien"],
+  "credits": "To all those who contributed ideas, code, models, textures, and more!",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
