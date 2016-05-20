@@ -1,14 +1,14 @@
 package com.minecraftuberverse.tannery.proxy;
 
-import com.minecraftuberverse.tannery.block.TanneryBlock;
-import com.minecraftuberverse.tannery.item.TanneryItem;
+import com.minecraftuberverse.tannery.init.TanneryBlock;
+import com.minecraftuberverse.tannery.init.TanneryItem;
 
-public class ServerProxy{
-	public void registerRenderThings(){
-		
-	
-		TanneryItem.registerRenders();
-		TanneryBlock.registerRenders();
+public class ServerProxy extends CommonProxy
+{
+
+	@Override
+	public void init()
+	{
+
 	}
-
 }
