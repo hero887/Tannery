@@ -27,30 +27,29 @@ public class ButchersBlock extends BlockDirectional
 	}
 
 	// below is the stuff to make the block rotate on placement
-	/*
-	 * public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
-	 * { super.onBlockAdded(worldIn, pos, state); }
-	 * 
-	 * public boolean canPlaceBlockAt(World worldIn, BlockPos pos) { return
-	 * worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos) &&
-	 * World.doesBlockHaveSolidTopSurface(worldIn, pos.down()); }
-	 * 
-	 * public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing
-	 * facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase
-	 * placer) { return this.getDefaultState().withProperty(FACING,
-	 * placer.getHorizontalFacing().getOpposite()); }
-	 * 
-	 * public IBlockState getStateFromMeta(int meta) { return
-	 * this.getDefaultState().withProperty(FACING,
-	 * EnumFacing.getHorizontal(meta)); }
-	 * 
-	 * public int getMetaFromState(IBlockState state) { return ((EnumFacing)
-	 * state.getValue(FACING)).getHorizontalIndex(); }
-	 * 
-	 * protected BlockState createBlockState() { return new BlockState(this, new
-	 * IProperty[] { FACING }); }
-	 * 
-	 */
+	
+	  public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
+	  { super.onBlockAdded(worldIn, pos, state); }
+	  
+	  public boolean canPlaceBlockAt(World worldIn, BlockPos pos) { return
+	  worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos) &&
+	  World.doesBlockHaveSolidTopSurface(worldIn, pos.down()); }
+	  
+	  public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing
+	  facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase
+	  placer) { return this.getDefaultState().withProperty(FACING,
+	  placer.getHorizontalFacing().getOpposite()); }
+	  
+	  public IBlockState getStateFromMeta(int meta) { return
+	  this.getDefaultState().withProperty(FACING,
+	  EnumFacing.getHorizontal(meta)); }
+	 
+	 public int getMetaFromState(IBlockState state) { return ((EnumFacing)
+	  state.getValue(FACING)).getHorizontalIndex(); }
+	  
+	  protected BlockState createBlockState() { return new BlockState(this, new
+	  IProperty[] { FACING }); }
+
 	@Override
 	public boolean isOpaqueCube()
 	{
