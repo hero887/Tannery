@@ -5,4 +5,5 @@
 !*License*
 !README*
 !gradlew*
+!gradle/*
 .DS_Store
