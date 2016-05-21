@@ -1,18 +1,19 @@
 package com.minecraftuberverse.tannery.init;
 
 import com.minecraftuberverse.tannery.Reference;
+import com.minecraftuberverse.tannery.item.TanneryItem;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class TanneryItem
+public class TanneryItems
 {
+	public static TanneryItem carcass;
 
 	public static void init()
 	{
-
+		carcass = new TanneryItem("carcass");
 	}
 
 	public static void register()
@@ -22,7 +23,7 @@ public class TanneryItem
 
 	public static void registerRenderers()
 	{
-
+		registerItemRenderer(carcass);
 	}
 
 	public static void registerItemRenderer(Item item)

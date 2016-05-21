@@ -1,7 +1,7 @@
 package com.minecraftuberverse.tannery.proxy;
 
-import com.minecraftuberverse.tannery.init.TanneryBlock;
-import com.minecraftuberverse.tannery.init.TanneryItem;
+import com.minecraftuberverse.tannery.init.TanneryBlocks;
+import com.minecraftuberverse.tannery.init.TanneryItems;
 
 public class ClientProxy extends CommonProxy
 {
@@ -16,7 +16,7 @@ public class ClientProxy extends CommonProxy
 		// RenderingRegistry.registerEntityRenderingHandler(RidePat.class,new
 		// RenderPat(new ModelBentPlayer(), 0));
 
-		TanneryItem.registerRenderers();
-		TanneryBlock.registerRenderers();
+		TanneryItems.registerRenderers();
+		TanneryBlocks.registerRenderers();
 	}
 }

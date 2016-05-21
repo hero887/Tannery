@@ -1,7 +1,7 @@
 package com.minecraftuberverse.tannery.proxy;
 
-import com.minecraftuberverse.tannery.init.TanneryBlock;
-import com.minecraftuberverse.tannery.init.TanneryItem;
+import com.minecraftuberverse.tannery.init.TanneryBlocks;
+import com.minecraftuberverse.tannery.init.TanneryItems;
 
 public class ServerProxy extends CommonProxy
 {
