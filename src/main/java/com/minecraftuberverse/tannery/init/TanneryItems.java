@@ -12,18 +12,22 @@ public class TanneryItems
 	public static TanneryItem bloodyCowCarcass;
 	public static TanneryItem bloodyPigCarcass;
 	public static TanneryItem bloodySheepCarcass;
+	public static TanneryItem bloodyElkCarcass;
 	public static TanneryItem cowCarcass;
 	public static TanneryItem pigCarcass;
 	public static TanneryItem sheepCarcass;
+	public static TanneryItem elkCarcass;
 
 	public static void init()
 	{
 		bloodyCowCarcass = new TanneryItem("bloody_carcass_cow");
 		bloodyPigCarcass = new TanneryItem("bloody_carcass_pig");
 		bloodySheepCarcass = new TanneryItem("bloody_carcass_sheep");
+		bloodyElkCarcass = new TanneryItem("bloody_carcass_elk");
 		cowCarcass = new TanneryItem("carcass_cow");
 		pigCarcass = new TanneryItem("carcass_pig");
 		sheepCarcass = new TanneryItem("carcass_sheep");
+		elkCarcass = new TanneryItem("carcass_elk");
 	}
 
 	public static void register()
@@ -36,9 +40,11 @@ public class TanneryItems
 		registerItemRenderer(bloodyCowCarcass);
 		registerItemRenderer(bloodyPigCarcass);
 		registerItemRenderer(bloodySheepCarcass);
+		registerItemRenderer(bloodyElkCarcass);
 		registerItemRenderer(cowCarcass);
 		registerItemRenderer(pigCarcass);
 		registerItemRenderer(sheepCarcass);
+		registerItemRenderer(elkCarcass);
 	}
 
 	public static void registerItemRenderer(Item item)
