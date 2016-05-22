@@ -9,11 +9,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntitySheep;
-import net.minecraft.init.Items;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+/**
+ * @author Lewis_McReu
+ */
 public class EntityDropsHandler
 {
 	@SubscribeEvent
@@ -21,24 +24,23 @@ public class EntityDropsHandler
 	{
 		Entity e = event.entity;
 		List<EntityItem> drops = event.drops;
-		// Remove leather from cow drops
-		if (e instanceof EntityCow)
+		// Remove all drops from cows, sheep and pigs, add carcass drop
+		if (e instanceof EntityCow || e instanceof EntityPig || e instanceof EntitySheep)
 		{
+			EntityAnimal a = (EntityAnimal) e;
 			Iterator<EntityItem> it = drops.iterator();
 			while (it.hasNext())
 			{
 				EntityItem i = it.next();
-				if (i.getEntityItem().getItem().equals(Items.leather))
-				{
-					it.remove();
-				}
+				it.remove();
 			}
-		}
 
-		// Add carcass to sheep and cow drops
-		if (e instanceof EntitySheep || e instanceof EntityCow)
-		{
-			if (((EntityAnimal) e).getGrowingAge() == 0) e.dropItem(TanneryItems.carcass, 1);
+			if (a.getGrowingAge() == 0)
+			{
+				if (a instanceof EntityCow) a.dropItem(TanneryItems.bloodyCowCarcass, 1);
+				else if (a instanceof EntityPig) a.dropItem(TanneryItems.bloodyPigCarcass, 1);
+				else if (a instanceof EntitySheep) a.dropItem(TanneryItems.bloodySheepCarcass, 1);
+			}
 		}
 	}
 }

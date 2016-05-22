@@ -9,11 +9,21 @@ import net.minecraft.item.Item;
 
 public class TanneryItems
 {
-	public static TanneryItem carcass;
+	public static TanneryItem bloodyCowCarcass;
+	public static TanneryItem bloodyPigCarcass;
+	public static TanneryItem bloodySheepCarcass;
+	public static TanneryItem cowCarcass;
+	public static TanneryItem pigCarcass;
+	public static TanneryItem sheepCarcass;
 
 	public static void init()
 	{
-		carcass = new TanneryItem("carcass");
+		bloodyCowCarcass = new TanneryItem("bloody_carcass_cow");
+		bloodyPigCarcass = new TanneryItem("bloody_carcass_pig");
+		bloodySheepCarcass = new TanneryItem("bloody_carcass_sheep");
+		cowCarcass = new TanneryItem("carcass_cow");
+		pigCarcass = new TanneryItem("carcass_pig");
+		sheepCarcass = new TanneryItem("carcass_sheep");
 	}
 
 	public static void register()
@@ -23,7 +33,12 @@ public class TanneryItems
 
 	public static void registerRenderers()
 	{
-		registerItemRenderer(carcass);
+		registerItemRenderer(bloodyCowCarcass);
+		registerItemRenderer(bloodyPigCarcass);
+		registerItemRenderer(bloodySheepCarcass);
+		registerItemRenderer(cowCarcass);
+		registerItemRenderer(pigCarcass);
+		registerItemRenderer(sheepCarcass);
 	}
 
 	public static void registerItemRenderer(Item item)
