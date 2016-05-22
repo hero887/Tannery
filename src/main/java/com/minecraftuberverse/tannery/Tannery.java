@@ -1,6 +1,9 @@
 package com.minecraftuberverse.tannery;
 
+import com.minecraftuberverse.tannery.proxy.CommonProxy;
+
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -8,9 +11,6 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-
-import com.minecraftuberverse.tannery.init.TanneryTabs;
-import com.minecraftuberverse.tannery.proxy.CommonProxy;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class Tannery
@@ -20,8 +20,16 @@ public class Tannery
 
 	@SidedProxy(clientSide = "com.minecraftuberverse.tannery.proxy.ClientProxy", serverSide = "com.minecraftuberverse.tannery.proxy.ServerProxy")
 	public static CommonProxy proxy;
-	
-	public static CreativeTabs tabTannery = new TanneryTabs(CreativeTabs.getNextID(), "tabTannery");
+
+	public static CreativeTabs tabTannery = new CreativeTabs(CreativeTabs.getNextID(), "tabTannery")
+	{
+		@Override
+		public Item getTabIconItem()
+		{
+			// TODO Auto-generated method stub
+			return null;
+		}
+	};
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
