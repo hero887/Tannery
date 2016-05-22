@@ -1,5 +1,7 @@
 package com.minecraftuberverse.tannery.block.blocktype;
 
+import com.minecraftuberverse.tannery.Tannery;
+
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -23,6 +25,7 @@ public class ButchersBlock extends BlockDirectional
 		this.setUnlocalizedName("ButcherBlock");
 		this.setHarvestLevel("axe", 1);
 		this.setHardness(1.0F);
+		this.setCreativeTab(Tannery.tabTannery);
 
 	}
 
