@@ -3,6 +3,7 @@ package com.minecraftuberverse.tannery;
 import com.minecraftuberverse.tannery.proxy.CommonProxy;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -27,7 +28,7 @@ public class Tannery
 		public Item getTabIconItem()
 		{
 			// TODO Auto-generated method stub
-			return null;
+			return Items.leather;
 		}
 	};
 
