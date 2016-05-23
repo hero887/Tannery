@@ -53,8 +53,8 @@ public class TileEntityGallows extends TileEntity implements IUpdatePlayerListBo
 						.isBloody() && stack.stackSize == 1)
 		{
 			setContent(stack);
-			markForUpdate();
 		}
+		markForUpdate();
 	}
 
 	public CarcassType getCarcassType()
@@ -71,9 +71,9 @@ public class TileEntityGallows extends TileEntity implements IUpdatePlayerListBo
 	@Override
 	public void update()
 	{
+		 System.out.println(getCarcassType().toString() + " " + isBloody());
 		if (isBloody())
 		{
-			// TODO different progress values / type
 			if (progressCounter >= 20 * getCarcassType().getSize())
 			{
 				switch (getCarcassType())
@@ -133,7 +133,12 @@ public class TileEntityGallows extends TileEntity implements IUpdatePlayerListBo
 	public void writeToNBT(NBTTagCompound compound)
 	{
 		super.writeToNBT(compound);
-		if (getContent() != null) compound.setTag(NBTKEY_CONTENT, getContent().getTagCompound());
+		if (getContent() != null)
+		{
+			NBTTagCompound p = new NBTTagCompound();
+			getContent().writeToNBT(p);
+			compound.setTag(NBTKEY_CONTENT, p);
+		}
 		compound.setInteger(NBTKEY_PROGRESSCOUNTER, progressCounter);
 	}
 
