@@ -20,6 +20,7 @@ public class TanneryItems
 	public static TanneryItem pigCarcass;
 	public static TanneryItem sheepCarcass;
 	public static TanneryItem elkCarcass;
+	public static TanneryItem antler;
 
 	public static void init()
 	{
@@ -31,7 +32,9 @@ public class TanneryItems
 		pigCarcass = new ItemCarcass(CarcassType.PIG);
 		sheepCarcass = new ItemCarcass(CarcassType.SHEEP);
 		elkCarcass = new ItemCarcass(CarcassType.ELK);
+		antler = new Item().setUnlocalizedName("antler");
 
+		register(antler);
 		register(bloodyCowCarcass);
 		register(bloodyPigCarcass);
 		register(bloodySheepCarcass);
@@ -57,6 +60,7 @@ public class TanneryItems
 		registerItemRenderer(pigCarcass);
 		registerItemRenderer(sheepCarcass);
 		registerItemRenderer(elkCarcass);
+		registerItemRenderer(antler);
 	}
 
 	public static void registerItemRenderer(Item item)
