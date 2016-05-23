@@ -19,6 +19,7 @@ public class TanneryBlockDirectional extends BlockDirectional
 		super(materialIn);
 		setUnlocalizedName(unlocalizedName);
 		setCreativeTab(Tannery.tabTannery);
+		setDefaultState(getDefaultState().withProperty(FACING, EnumFacing.NORTH));
 	}
 
 	@Override

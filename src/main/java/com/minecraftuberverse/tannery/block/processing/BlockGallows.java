@@ -30,6 +30,8 @@ public class BlockGallows extends TanneryBlockDirectional implements ITileEntity
 	public BlockGallows()
 	{
 		super(Material.wood, "gallows");
+		setDefaultState(getDefaultState().withProperty(CARCASS, CarcassType.NONE)
+				.withProperty(BLOODY, true));
 	}
 
 	@Override
@@ -55,15 +57,21 @@ public class BlockGallows extends TanneryBlockDirectional implements ITileEntity
 			if (stack != null && stack
 					.getItem() instanceof ItemCarcass && ((ItemCarcass) stack.getItem()).isBloody())
 			{
-				if (!playerIn.capabilities.isCreativeMode)
+				ItemStack stackIn = new ItemStack(stack.getItem(), 1);
+				if (!worldIn.isRemote)
 				{
-					playerIn.inventory.consumeInventoryItem(stack.getItem());
+					if (!playerIn.capabilities.isCreativeMode)
+					{
+						if (stack.stackSize > 1) stackIn = stack.splitStack(1);
+						else playerIn.inventory
+								.setInventorySlotContents(playerIn.inventory.currentItem, null);
+					}
 				}
-				tile.putContent(new ItemStack(stack.getItem(), 1));
+				tile.putContent(stackIn);
+				tile.markDirty();
 				return true;
 			}
 		}
-
 		return false;
 	}
 
@@ -77,8 +85,11 @@ public class BlockGallows extends TanneryBlockDirectional implements ITileEntity
 	public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
 	{
 		List<ItemStack> list = super.getDrops(world, pos, state, fortune);
-		ItemStack content = getTileEntity(world, pos).retrieveContent();
-		if (content != null) list.add(content);
+		if (getTileEntity(world, pos) != null)
+		{
+			ItemStack content = getTileEntity(world, pos).retrieveContent();
+			if (content != null) list.add(content);
+		}
 		return list;
 	}
 
