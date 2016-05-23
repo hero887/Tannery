@@ -32,9 +32,8 @@ public class TanneryItems
 		pigCarcass = new ItemCarcass(CarcassType.PIG);
 		sheepCarcass = new ItemCarcass(CarcassType.SHEEP);
 		elkCarcass = new ItemCarcass(CarcassType.ELK);
-		antler = new Item().setUnlocalizedName("antler");
+		antler = new TanneryItem("antler");
 
-		register(antler);
 		register(bloodyCowCarcass);
 		register(bloodyPigCarcass);
 		register(bloodySheepCarcass);
@@ -43,6 +42,7 @@ public class TanneryItems
 		register(pigCarcass);
 		register(sheepCarcass);
 		register(elkCarcass);
+		register(antler);
 	}
 
 	private static void register(Item item)

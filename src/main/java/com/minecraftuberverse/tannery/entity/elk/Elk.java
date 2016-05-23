@@ -26,7 +26,6 @@ import net.minecraft.world.World;
 
 public class Elk extends EntityAnimal
 {
-
 	public Elk(World worldIn)
 	{
 		super(worldIn);
