@@ -63,7 +63,7 @@ public class Elk extends EntityAnimal
 
 	protected String getDeathSound()
 	{
-		return "tannery:mob.elk.hurt";
+		return "tannery:mob.elk.death";
 	}
 
 	protected void playStepSound(BlockPos p_180429_1_, Block p_180429_2_)
