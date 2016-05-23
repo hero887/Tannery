@@ -13,8 +13,6 @@ public class ClientProxy extends CommonProxy
 
 	private void registerRenderers()
 	{
-		// RenderingRegistry.registerEntityRenderingHandler(RidePat.class,new
-		// RenderPat(new ModelBentPlayer(), 0));
 
 		TanneryItems.registerRenderers();
 		TanneryBlocks.registerRenderers();
