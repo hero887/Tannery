@@ -2,8 +2,6 @@ package com.minecraftuberverse.tannery.item;
 
 import com.minecraftuberverse.tannery.util.CarcassType;
 
-import net.minecraft.item.Item;
-
 public class ItemCarcass extends TanneryItem
 {
 	private final CarcassType carcassType;
@@ -16,16 +14,9 @@ public class ItemCarcass extends TanneryItem
 
 	public ItemCarcass(CarcassType carcassType, boolean bloody)
 	{
-		super("");
+		super((bloody ? "bloody_" : "") + "carcass_" + carcassType.toString());
 		this.carcassType = carcassType;
 		this.bloody = bloody;
-	}
-
-	@Override
-	public Item setUnlocalizedName(String unlocalizedName)
-	{
-		unlocalizedName = isBloody() ? "bloody_" : "" + "carcass_" + getCarcassType().toString();
-		return super.setUnlocalizedName(unlocalizedName);
 	}
 
 	public CarcassType getCarcassType()

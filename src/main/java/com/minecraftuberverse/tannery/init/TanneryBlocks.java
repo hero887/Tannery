@@ -3,6 +3,7 @@ package com.minecraftuberverse.tannery.init;
 import com.minecraftuberverse.tannery.Reference;
 import com.minecraftuberverse.tannery.block.processing.BlockGallows;
 import com.minecraftuberverse.tannery.block.processing.ButchersBlock;
+import com.minecraftuberverse.tannery.tileentity.TileEntityGallows;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -21,6 +22,7 @@ public class TanneryBlocks
 		// This method gives the block it's properties
 		butcherBlock = new ButchersBlock();
 		gallowsBlock = new BlockGallows();
+		GameRegistry.registerTileEntity(TileEntityGallows.class, "tileEntityGallows");
 		register(butcherBlock);
 		register(gallowsBlock);
 	}

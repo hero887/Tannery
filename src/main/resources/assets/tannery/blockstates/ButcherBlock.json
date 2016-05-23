@@ -1,8 +1,8 @@
 {
     "variants": {
-        "facing=north": { "model": "tannery:ButcherBlock", "y": 180},
-        "facing=south": { "model": "tannery:ButcherBlock"},
-        "facing=west":  { "model": "tannery:ButcherBlock", "y": 90 },
-        "facing=east":  { "model": "tannery:ButcherBlock", "y": 270 }
+        "facing=north": { "model": "tannery:butcherblock", "y": 180},
+        "facing=south": { "model": "tannery:butcherblock"},
+        "facing=west":  { "model": "tannery:butcherblock", "y": 90 },
+        "facing=east":  { "model": "tannery:butcherblock", "y": 270 }
     }
 }

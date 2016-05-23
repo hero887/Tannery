@@ -14,10 +14,11 @@ import net.minecraft.world.World;
 
 public class TanneryBlockDirectional extends BlockDirectional
 {
-	public TanneryBlockDirectional(Material materialIn)
+	public TanneryBlockDirectional(Material materialIn, String unlocalizedName)
 	{
 		super(materialIn);
-		this.setCreativeTab(Tannery.tabTannery);
+		setUnlocalizedName(unlocalizedName);
+		setCreativeTab(Tannery.tabTannery);
 	}
 
 	@Override

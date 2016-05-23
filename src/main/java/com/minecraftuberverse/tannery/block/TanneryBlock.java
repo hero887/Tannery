@@ -7,9 +7,10 @@ import net.minecraft.block.material.Material;
 
 public class TanneryBlock extends Block
 {
-	public TanneryBlock(Material materialIn)
+	public TanneryBlock(Material materialIn, String unlocalizedName)
 	{
 		super(materialIn);
-		this.setCreativeTab(Tannery.tabTannery);
+		setUnlocalizedName(unlocalizedName);
+		setCreativeTab(Tannery.tabTannery);
 	}
 }
