@@ -1,5 +1,6 @@
 {
 	"mob.elk.hurt": {"category": "master","sounds": [{"name": "ElkHurt","stream": false}]},    
 	"mob.elk.say": {"category": "master","sounds": [{"name": "ElkSay","stream": false}]},
-	"mob.elk.step": {"category": "master","sounds": [{"name": "ElkStep","stream": false}]}
+	"mob.elk.step": {"category": "master","sounds": [{"name": "ElkStep","stream": false}]},
+	"mob.elk.death": {"category": "master","sounds": [{"name": "ElkDeath","stream": false}]}
 }
