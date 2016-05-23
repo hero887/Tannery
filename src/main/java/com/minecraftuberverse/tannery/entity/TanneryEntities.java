@@ -8,9 +8,9 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 //this is a basic Entity class
 
-public class TanneryEntity
+public class TanneryEntities
 {
-	public static void Tannery()
+	public static void init()
 	{
 		registerEntity();
 	}

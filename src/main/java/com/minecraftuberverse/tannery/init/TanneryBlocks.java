@@ -1,10 +1,10 @@
 package com.minecraftuberverse.tannery.init;
 
 import com.minecraftuberverse.tannery.Reference;
-import com.minecraftuberverse.tannery.block.blocktype.ButchersBlock;
+import com.minecraftuberverse.tannery.block.processing.BlockGallows;
+import com.minecraftuberverse.tannery.block.processing.ButchersBlock;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -14,23 +14,28 @@ public class TanneryBlocks
 {
 	// This makes the new block
 	public static Block butcherBlock;
+	public static Block gallowsBlock;
 
 	public static void init()
 	{
 		// This method gives the block it's properties
-		butcherBlock = new ButchersBlock(Material.wood);
+		butcherBlock = new ButchersBlock();
+		gallowsBlock = new BlockGallows();
+		register(butcherBlock);
+		register(gallowsBlock);
 	}
 
-	public static void register()
+	// This method adds the block into the game
+	private static void register(Block block)
 	{
-		// This method adds the block into the game
-		GameRegistry.registerBlock(butcherBlock, butcherBlock.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(block, block.getUnlocalizedName().substring(5));
 	}
 
+	// This method registers the block model
 	public static void registerRenderers()
 	{
-		// This method registers the block model
 		registerRender(butcherBlock);
+		registerRender(gallowsBlock);
 	}
 
 	// This is used to make the registerRenders() method work

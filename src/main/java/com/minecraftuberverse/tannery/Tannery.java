@@ -22,20 +22,21 @@ public class Tannery
 	@SidedProxy(clientSide = "com.minecraftuberverse.tannery.proxy.ClientProxy", serverSide = "com.minecraftuberverse.tannery.proxy.ServerProxy")
 	public static CommonProxy proxy;
 
-	public static CreativeTabs tabTannery = new CreativeTabs(CreativeTabs.getNextID(), "tabTannery")
-	{
-		@Override
-		public Item getTabIconItem()
-		{
-			// TODO Auto-generated method stub
-			return Items.leather;
-		}
-	};
+	public static CreativeTabs tabTannery;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		proxy.preInit();
+		tabTannery = new CreativeTabs(CreativeTabs.getNextID(), "tabTannery")
+		{
+			@Override
+			public Item getTabIconItem()
+			{
+				// TODO Auto-generated method stub
+				return Items.leather;
+			}
+		};
 	}
 
 	@EventHandler

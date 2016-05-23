@@ -1,11 +1,14 @@
 package com.minecraftuberverse.tannery.init;
 
 import com.minecraftuberverse.tannery.Reference;
+import com.minecraftuberverse.tannery.item.ItemCarcass;
 import com.minecraftuberverse.tannery.item.TanneryItem;
+import com.minecraftuberverse.tannery.util.CarcassType;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class TanneryItems
 {
@@ -20,19 +23,28 @@ public class TanneryItems
 
 	public static void init()
 	{
-		bloodyCowCarcass = new TanneryItem("bloody_carcass_cow");
-		bloodyPigCarcass = new TanneryItem("bloody_carcass_pig");
-		bloodySheepCarcass = new TanneryItem("bloody_carcass_sheep");
-		bloodyElkCarcass = new TanneryItem("bloody_carcass_elk");
-		cowCarcass = new TanneryItem("carcass_cow");
-		pigCarcass = new TanneryItem("carcass_pig");
-		sheepCarcass = new TanneryItem("carcass_sheep");
-		elkCarcass = new TanneryItem("carcass_elk");
+		bloodyCowCarcass = new ItemCarcass(CarcassType.COW, true);
+		bloodyPigCarcass = new ItemCarcass(CarcassType.PIG, true);
+		bloodySheepCarcass = new ItemCarcass(CarcassType.SHEEP, true);
+		bloodyElkCarcass = new ItemCarcass(CarcassType.ELK, true);
+		cowCarcass = new ItemCarcass(CarcassType.COW);
+		pigCarcass = new ItemCarcass(CarcassType.PIG);
+		sheepCarcass = new ItemCarcass(CarcassType.SHEEP);
+		elkCarcass = new ItemCarcass(CarcassType.ELK);
+
+		register(bloodyCowCarcass);
+		register(bloodyPigCarcass);
+		register(bloodySheepCarcass);
+		register(bloodyElkCarcass);
+		register(cowCarcass);
+		register(pigCarcass);
+		register(sheepCarcass);
+		register(elkCarcass);
 	}
 
-	public static void register()
+	private static void register(Item item)
 	{
-
+		GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
 	}
 
 	public static void registerRenderers()

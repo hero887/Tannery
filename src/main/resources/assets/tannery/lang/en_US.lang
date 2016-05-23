@@ -2,6 +2,7 @@
 item.carcass.name=Carcass
 
 //Blocks
+tile.butcherBlock.name=Butcher's Block
 
 //Other
 itemGroup.tabTannery=Tannery
