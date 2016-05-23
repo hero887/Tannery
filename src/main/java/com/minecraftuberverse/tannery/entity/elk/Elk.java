@@ -86,32 +86,6 @@ public class Elk extends EntityAnimal
 		this.dropItem(getDropItem(), 1);
 	}
 
-	public boolean interact(EntityPlayer player)
-	{
-		ItemStack itemstack = player.inventory.getCurrentItem();
-
-		if (itemstack != null && itemstack
-				.getItem() == Items.bucket && !player.capabilities.isCreativeMode)
-		{
-			if (itemstack.stackSize-- == 1)
-			{
-				player.inventory.setInventorySlotContents(player.inventory.currentItem,
-						new ItemStack(Items.milk_bucket));
-			}
-			else if (!player.inventory.addItemStackToInventory(new ItemStack(Items.milk_bucket)))
-			{
-				player.dropPlayerItemWithRandomChoice(new ItemStack(Items.milk_bucket, 1, 0),
-						false);
-			}
-
-			return true;
-		}
-		else
-		{
-			return super.interact(player);
-		}
-	}
-
 	public Elk createChild(EntityAgeable ageable)
 	{
 		return new Elk(this.worldObj);
