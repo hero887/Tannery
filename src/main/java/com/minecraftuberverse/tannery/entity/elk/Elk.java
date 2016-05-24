@@ -79,7 +79,6 @@ public class Elk extends EntityAnimal
 	protected Item getDropItem()
 	{
 		return TanneryItems.bloodyElkCarcass;
-		return TanneryItems.antler;
 	}
 
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_)
