@@ -16,6 +16,10 @@ public class TanneryItems
 	public static TanneryItem bloodyPigCarcass;
 	public static TanneryItem bloodySheepCarcass;
 	public static TanneryItem bloodyElkCarcass;
+	public static TanneryItem drainedCowCarcass;
+	public static TanneryItem drainedPigCarcass;
+	public static TanneryItem drainedSheepCarcass;
+	public static TanneryItem drainedElkCarcass;
 	public static TanneryItem cowCarcass;
 	public static TanneryItem pigCarcass;
 	public static TanneryItem sheepCarcass;
@@ -28,6 +32,10 @@ public class TanneryItems
 		bloodyPigCarcass = new ItemCarcass(CarcassType.PIG, true);
 		bloodySheepCarcass = new ItemCarcass(CarcassType.SHEEP, true);
 		bloodyElkCarcass = new ItemCarcass(CarcassType.ELK, true);
+		drainedCowCarcass = new ItemCarcass(CarcassType.COW, false);
+		drainedPigCarcass = new ItemCarcass(CarcassType.PIG, false);
+		drainedSheepCarcass = new ItemCarcass(CarcassType.SHEEP, false);
+		drainedElkCarcass = new ItemCarcass(CarcassType.ELK, false);
 		cowCarcass = new ItemCarcass(CarcassType.COW);
 		pigCarcass = new ItemCarcass(CarcassType.PIG);
 		sheepCarcass = new ItemCarcass(CarcassType.SHEEP);
@@ -38,6 +46,10 @@ public class TanneryItems
 		register(bloodyPigCarcass);
 		register(bloodySheepCarcass);
 		register(bloodyElkCarcass);
+		register(drainedCowCarcass);
+		register(drainedPigCarcass);
+		register(drainedSheepCarcass);
+		register(drainedElkCarcass);
 		register(cowCarcass);
 		register(pigCarcass);
 		register(sheepCarcass);
@@ -56,6 +68,10 @@ public class TanneryItems
 		registerItemRenderer(bloodyPigCarcass);
 		registerItemRenderer(bloodySheepCarcass);
 		registerItemRenderer(bloodyElkCarcass);
+		registerItemRenderer(drainedCowCarcass);
+		registerItemRenderer(drainedPigCarcass);
+		registerItemRenderer(drainedSheepCarcass);
+		registerItemRenderer(drainedElkCarcass);
 		registerItemRenderer(cowCarcass);
 		registerItemRenderer(pigCarcass);
 		registerItemRenderer(sheepCarcass);

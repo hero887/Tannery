@@ -9,12 +9,14 @@ public class ItemCarcass extends TanneryItem
 
 	public ItemCarcass(CarcassType carcassType)
 	{
-		this(carcassType, false);
+		super("carcass_" + carcassType.toString());
+		this.bloody = false;
+		this.carcassType = carcassType;
 	}
 
 	public ItemCarcass(CarcassType carcassType, boolean bloody)
 	{
-		super((bloody ? "bloody_" : "") + "carcass_" + carcassType.toString());
+		super((bloody ? "bloody" : "drained") + "_carcass_" + carcassType.toString());
 		this.carcassType = carcassType;
 		this.bloody = bloody;
 	}

@@ -71,7 +71,7 @@ public class TileEntityGallows extends TileEntity implements IUpdatePlayerListBo
 	@Override
 	public void update()
 	{
-		 System.out.println(getCarcassType().toString() + " " + isBloody());
+		System.out.println(getCarcassType().toString() + " " + isBloody());
 		if (isBloody())
 		{
 			if (progressCounter >= 20 * getCarcassType().getSize())
@@ -79,16 +79,16 @@ public class TileEntityGallows extends TileEntity implements IUpdatePlayerListBo
 				switch (getCarcassType())
 				{
 					case ELK:
-						setContent(new ItemStack(TanneryItems.elkCarcass, 1));
+						setContent(new ItemStack(TanneryItems.drainedElkCarcass, 1));
 						break;
 					case COW:
-						setContent(new ItemStack(TanneryItems.cowCarcass, 1));
+						setContent(new ItemStack(TanneryItems.drainedCowCarcass, 1));
 						break;
 					case PIG:
-						setContent(new ItemStack(TanneryItems.pigCarcass, 1));
+						setContent(new ItemStack(TanneryItems.drainedPigCarcass, 1));
 						break;
 					case SHEEP:
-						setContent(new ItemStack(TanneryItems.sheepCarcass, 1));
+						setContent(new ItemStack(TanneryItems.drainedSheepCarcass, 1));
 						break;
 					default:
 						break;

@@ -1,0 +1,583 @@
+{
+    "modelName": "Basin",
+    "authorName": "Alien",
+    "projVersion": 4,
+    "metadata": [
+        
+    ],
+    "textureWidth": 64,
+    "textureHeight": 32,
+    "scale": [
+        1.0,
+        1.0,
+        1.0
+    ],
+    "cubeGroups": [
+        
+    ],
+    "cubes": [
+        {
+            "name": "shape1",
+            "dimensions": [
+                1,
+                4,
+                14
+            ],
+            "position": [
+                8.0,
+                19.4,
+                -7.0
+            ],
+            "offset": [
+                -1.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "z{BY]z}$cind@IPrDB?S"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                14,
+                1,
+                14
+            ],
+            "position": [
+                -7.0,
+                23.0,
+                -7.0
+            ],
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "fp?75up([{d2JY9_Dza:"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                14,
+                4,
+                1
+            ],
+            "position": [
+                -7.0,
+                19.4,
+                8.0
+            ],
+            "offset": [
+                0.0,
+                0.0,
+                -1.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "0Jw\u0026PVF\\Q\u003dY7NoI._D!6"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                1,
+                4,
+                14
+            ],
+            "position": [
+                -8.0,
+                19.4,
+                -7.0
+            ],
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "Og28Ke0J\u0026oP~n\\S;{,T6"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                14,
+                4,
+                1
+            ],
+            "position": [
+                -7.0,
+                19.5,
+                -8.0
+            ],
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "X\\Sa6} wz\u0027jq^ t_-4b*"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                14,
+                10,
+                1
+            ],
+            "position": [
+                -7.0,
+                9.5,
+                9.0
+            ],
+            "offset": [
+                0.0,
+                0.0,
+                -1.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "Qi}UU*XV:ZsU,|3045`Z"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                1,
+                10,
+                14
+            ],
+            "position": [
+                -9.0,
+                9.5,
+                -7.0
+            ],
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "@mxN?WIlH:^2;\u003cffccOq"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                1,
+                10,
+                1
+            ],
+            "position": [
+                -8.0,
+                9.5,
+                -8.0
+            ],
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "9`bPuprQFLjI;P,~jBzl"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                14,
+                10,
+                1
+            ],
+            "position": [
+                -7.0,
+                9.5,
+                -9.0
+            ],
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "EXZTioos\"vyFYw]*7K])"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                1,
+                10,
+                14
+            ],
+            "position": [
+                9.0,
+                9.5,
+                -7.0
+            ],
+            "offset": [
+                -1.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "E:;_0M\u003cJ?\\B%v#Q716gG"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                1,
+                10,
+                1
+            ],
+            "position": [
+                8.0,
+                9.5,
+                -8.0
+            ],
+            "offset": [
+                -1.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "pLR_\\bJ[Kd%]bIJ@x\u003eY@"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                1,
+                10,
+                1
+            ],
+            "position": [
+                8.0,
+                9.5,
+                8.0
+            ],
+            "offset": [
+                -1.0,
+                0.0,
+                -1.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "J#t\u003cxHD\\oTW.}2GcBYLx"
+        },
+        {
+            "name": "shape1",
+            "dimensions": [
+                1,
+                10,
+                1
+            ],
+            "position": [
+                -8.0,
+                9.5,
+                8.0
+            ],
+            "offset": [
+                0.0,
+                0.0,
+                -1.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "txOffset": [
+                0,
+                0
+            ],
+            "txMirror": false,
+            "mcScale": 0.0,
+            "opacity": 100.0,
+            "hidden": false,
+            "metadata": [
+                
+            ],
+            "children": [
+                
+            ],
+            "identifier": "~e_A!PK\\\u0027^w8|\u003cR9pU,A"
+        }
+    ],
+    "anims": [
+        
+    ],
+    "cubeCount": 13
+}
