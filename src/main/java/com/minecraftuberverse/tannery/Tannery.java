@@ -33,7 +33,7 @@ public class Tannery
 			@Override
 			public Item getTabIconItem()
 			{
-				// TODO Auto-generated method stub
+				// TODO Assign proper item as icon
 				return Items.leather;
 			}
 		};
@@ -43,7 +43,6 @@ public class Tannery
 	public void init(FMLInitializationEvent event)
 	{
 		proxy.init();
-		GameRegistry.addShapelessRecipe(new ItemStack(Items.string, 4), new Object[] {Item.getItemFromBlock(Blocks.wool)});
 	}
 
 	@EventHandler

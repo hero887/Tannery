@@ -6,8 +6,13 @@ import com.minecraftuberverse.tannery.handler.ModLogonEventHandler;
 import com.minecraftuberverse.tannery.init.TanneryBlocks;
 import com.minecraftuberverse.tannery.init.TanneryItems;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public abstract class CommonProxy
 {
@@ -20,7 +25,11 @@ public abstract class CommonProxy
 		MinecraftForge.EVENT_BUS.register(new EntityDropsHandler());
 	}
 
-	public abstract void init();
+	public void init()
+	{
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.string, 4),
+				new Object[] { Item.getItemFromBlock(Blocks.wool) });
+	}
 
 	public void postInit()
 	{
