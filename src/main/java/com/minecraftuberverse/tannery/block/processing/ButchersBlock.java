@@ -10,7 +10,7 @@ public class ButchersBlock extends TanneryBlockDirectional
 {
 	public ButchersBlock()
 	{
-		super(Material.wood, "butchersblock");
+		super(Material.wood, "butcherblock");
 		this.setHarvestLevel("axe", 1);
 		this.setHardness(1.0F);
 		this.setCreativeTab(Tannery.tabTannery);
