@@ -1,4 +1,4 @@
-package com.minecraftuberverse.tannery.entity.elk;
+package com.minecraftuberverse.tannery.entity.babyelk;
 
 import com.minecraftuberverse.tannery.Reference;
 
@@ -11,21 +11,21 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderElk extends RenderLiving
+public class RenderBabyElk extends RenderLiving
 {
     private static final ResourceLocation elkTextures = new ResourceLocation(Reference.MOD_ID + ":" + "textures/entity/elk/elk_normal.png");
 
-    public RenderElk(RenderManager r, ModelBase m, float f)
+    public RenderBabyElk(RenderManager r, ModelBase m, float f)
     {
         super(r, m, f);
     }
 
-    protected ResourceLocation func_180572_a(Elk e)
+    protected ResourceLocation func_180572_a(ElkBaby e)
     {
         return elkTextures;
     }
     protected ResourceLocation getEntityTexture(Entity entity)
     {
-        return this.func_180572_a((Elk)entity);
+        return this.func_180572_a((ElkBaby)entity);
     }
 }

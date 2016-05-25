@@ -1,6 +1,7 @@
 package com.minecraftuberverse.tannery.entity;
 
 import com.minecraftuberverse.tannery.Tannery;
+import com.minecraftuberverse.tannery.entity.babyelk.ElkBaby;
 import com.minecraftuberverse.tannery.entity.elk.Elk;
 
 import net.minecraft.entity.EntityList;
@@ -22,7 +23,12 @@ public class TanneryEntities
 		// Example
 		// createEntity(Kangaroo.class, "Kangaroo", 0xDEA02C, 0xE3C286);
 		createEntity(Elk.class, "Elk", 0xFFFFFF, 0xFFFFFFF);
+		createEntityNoEgg(ElkBaby.class, "ElkBaby");
+		
+		
+		
 	}
+
 
 	public static void createEntity(Class entityClass, String entityName, int solidColor, int spotColor)
 	{
@@ -32,8 +38,16 @@ public class TanneryEntities
 		EntityRegistry.registerModEntity(entityClass, entityName, randomId, Tannery.modInstance, 42,
 				1, true);
 		createEgg(randomId, solidColor, spotColor);
-		//Other devs change the spawn if needed -George
+		 //EntityRegistry.addSpawn(Elk.class, 1, 21, 1, EnumCreatureType.CREATURE, BiomeGenBase.iceMountains);
 		 EntityRegistry.addSpawn(Elk.class, 62, 3, 7, EnumCreatureType.CREATURE, BiomeGenBase.iceMountains, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, BiomeGenBase.frozenOcean);
+	}
+	public static void createEntityNoEgg(Class entityClass, String entityName)
+	{
+		int randomId = EntityRegistry.findGlobalUniqueEntityId();
+
+		EntityRegistry.registerGlobalEntityID(entityClass, entityName, randomId);
+		EntityRegistry.registerModEntity(entityClass, entityName, randomId, Tannery.modInstance, 42,
+				1, true);
 	}
 
 	private static void createEgg(int randomId, int solidColor, int spotColor)

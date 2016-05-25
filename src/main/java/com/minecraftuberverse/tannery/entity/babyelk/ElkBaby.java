@@ -1,4 +1,4 @@
-package com.minecraftuberverse.tannery.entity.elk;
+package com.minecraftuberverse.tannery.entity.babyelk;
 
 import com.minecraftuberverse.tannery.init.TanneryItems;
 
@@ -24,10 +24,10 @@ import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 
-public class Elk extends EntityAnimal
+public class ElkBaby extends EntityAnimal
 {
 
-	public Elk(World worldIn)
+	public ElkBaby(World worldIn)
 	{
 		super(worldIn);
 		this.setSize(1.8F, 2.5F);
@@ -79,18 +79,11 @@ public class Elk extends EntityAnimal
 
 	protected Item getDropItem()
 	{
-		return TanneryItems.bloodyElkCarcass;
-		//return TanneryItems.antler;
+		return null;
 	}
-
-	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_)
+	public ElkBaby createChild(EntityAgeable ageable)
 	{
-		this.dropItem(getDropItem(), 1);
-	}
-	
-	public Elk createChild(EntityAgeable ageable)
-	{
-		return new Elk(this.worldObj);
+		return null;
 	}
 
 	public float getEyeHeight()
