@@ -1,5 +1,8 @@
 package com.minecraftuberverse.tannery.proxy;
 
+import com.minecraftuberverse.tannery.entity.babyelk.ElkBaby;
+import com.minecraftuberverse.tannery.entity.babyelk.ModelBabyElk;
+import com.minecraftuberverse.tannery.entity.babyelk.RenderBabyElk;
 import com.minecraftuberverse.tannery.entity.elk.Elk;
 import com.minecraftuberverse.tannery.entity.elk.ModelElk;
 import com.minecraftuberverse.tannery.entity.elk.RenderElk;
@@ -14,7 +17,6 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void init()
 	{
-		super.init();
 		registerRenderers();
 	}
 
@@ -24,5 +26,6 @@ public class ClientProxy extends CommonProxy
 		TanneryItems.registerRenderers();
 		TanneryBlocks.registerRenderers();
 		RenderingRegistry.registerEntityRenderingHandler(Elk.class, new RenderElk(Minecraft.getMinecraft().getRenderManager(), new ModelElk(), 0));
+		RenderingRegistry.registerEntityRenderingHandler(ElkBaby.class, new RenderBabyElk(Minecraft.getMinecraft().getRenderManager(), new ModelBabyElk(), 0));
 	}
 }
