@@ -1,6 +1,7 @@
 package com.minecraftuberverse.tannery.init;
 
 import com.minecraftuberverse.tannery.Reference;
+import com.minecraftuberverse.tannery.Tannery;
 import com.minecraftuberverse.tannery.block.processing.BlockGallows;
 import com.minecraftuberverse.tannery.block.processing.ButchersBlock;
 import com.minecraftuberverse.tannery.tileentity.TileEntityGallows;
@@ -48,5 +49,7 @@ public class TanneryBlocks
 				new ModelResourceLocation(
 						Reference.MOD_ID + ":" + item.getUnlocalizedName().substring(5),
 						"inventory"));
+		item.setCreativeTab(Tannery.tabTannery);
+
 	}
 }

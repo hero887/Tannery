@@ -1,14 +1,15 @@
 package com.minecraftuberverse.tannery.init;
 
-import com.minecraftuberverse.tannery.Reference;
-import com.minecraftuberverse.tannery.item.ItemCarcass;
-import com.minecraftuberverse.tannery.item.TanneryItem;
-import com.minecraftuberverse.tannery.util.CarcassType;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import com.minecraftuberverse.tannery.Reference;
+import com.minecraftuberverse.tannery.Tannery;
+import com.minecraftuberverse.tannery.item.ItemCarcass;
+import com.minecraftuberverse.tannery.item.TanneryItem;
+import com.minecraftuberverse.tannery.util.CarcassType;
 
 public class TanneryItems
 {
@@ -85,5 +86,6 @@ public class TanneryItems
 				new ModelResourceLocation(
 						Reference.MOD_ID + ":" + item.getUnlocalizedName().substring(5),
 						"inventory"));
+		item.setCreativeTab(Tannery.tabTannery);
 	}
 }
