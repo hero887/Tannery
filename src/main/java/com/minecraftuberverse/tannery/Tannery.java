@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, canBeDeactivated = true, dependencies = "required-after:ubercore@1.8-1.0")
 public class Tannery
 {
 	@Instance(Reference.MOD_ID)
@@ -27,7 +27,6 @@ public class Tannery
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		proxy.preInit();
 		tabTannery = new CreativeTabs(CreativeTabs.getNextID(), "tabTannery")
 		{
 			@Override
@@ -37,6 +36,7 @@ public class Tannery
 				return Items.leather;
 			}
 		};
+		proxy.preInit();
 	}
 
 	@EventHandler
