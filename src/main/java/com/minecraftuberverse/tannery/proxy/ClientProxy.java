@@ -17,12 +17,12 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void init()
 	{
+		super.init();
 		registerRenderers();
 	}
 
 	private void registerRenderers()
 	{
-
 		TanneryItems.registerRenderers();
 		TanneryBlocks.registerRenderers();
 		RenderingRegistry.registerEntityRenderingHandler(Elk.class, new RenderElk(Minecraft.getMinecraft().getRenderManager(), new ModelElk(), 0));

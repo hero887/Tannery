@@ -25,9 +25,9 @@ apply plugin: 'java'
 sourceCompatibility=1.8
 targetCompatibility=1.8
 
-version = "1.8-alpha"
-group= "com.minecraftuberverse.tannery" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "Tannery"
+version = "1.8-1.0"
+group= "com.minecraftuberverse.ubercore" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "UberCore"
 
 minecraft {
     version = "1.8-11.14.4.1563"
