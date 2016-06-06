@@ -1,15 +1,16 @@
 package com.minecraftuberverse.tannery.init;
 
+import com.minecraftuberverse.tannery.Reference;
+import com.minecraftuberverse.tannery.Tannery;
+import com.minecraftuberverse.tannery.item.EdibleAnimalPart;
+import com.minecraftuberverse.tannery.item.ItemCarcass;
+import com.minecraftuberverse.tannery.item.TanneryItem;
+import com.minecraftuberverse.tannery.util.CarcassType;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
-import com.minecraftuberverse.tannery.Reference;
-import com.minecraftuberverse.tannery.Tannery;
-import com.minecraftuberverse.tannery.item.ItemCarcass;
-import com.minecraftuberverse.tannery.item.TanneryItem;
-import com.minecraftuberverse.tannery.util.CarcassType;
 
 public class TanneryItems
 {
@@ -26,6 +27,7 @@ public class TanneryItems
 	public static TanneryItem sheepCarcass;
 	public static TanneryItem elkCarcass;
 	public static TanneryItem antler;
+	public static EdibleAnimalPart animal_brain = (EdibleAnimalPart) new EdibleAnimalPart(2, 1.0F, true).setUnlocalizedName("animal_brain");
 
 	public static void init()
 	{
@@ -42,7 +44,10 @@ public class TanneryItems
 		sheepCarcass = new ItemCarcass(CarcassType.SHEEP);
 		elkCarcass = new ItemCarcass(CarcassType.ELK);
 		antler = new TanneryItem("antler");
+		
+		
 
+		register(animal_brain);
 		register(bloodyCowCarcass);
 		register(bloodyPigCarcass);
 		register(bloodySheepCarcass);
@@ -65,6 +70,7 @@ public class TanneryItems
 
 	public static void registerRenderers()
 	{
+		registerItemRenderer(animal_brain);
 		registerItemRenderer(bloodyCowCarcass);
 		registerItemRenderer(bloodyPigCarcass);
 		registerItemRenderer(bloodySheepCarcass);
