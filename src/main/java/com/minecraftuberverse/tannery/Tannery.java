@@ -32,6 +32,7 @@ public class Tannery
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		logger = new Logger(Reference.MOD_NAME);
+		
 		tabTannery = new CreativeTabs(CreativeTabs.getNextID(), "tabTannery")
 		{
 			@Override

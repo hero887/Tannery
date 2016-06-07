@@ -127,9 +127,6 @@ public class TileEntityGallows extends TileEntityMachineSingular
 		}
 	}
 
-	/**
-	 * Overridden to either return the original output
-	 */
 	@Override
 	public ItemStack[] removeOutput()
 	{

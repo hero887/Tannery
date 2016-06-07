@@ -2,6 +2,7 @@ package com.minecraftuberverse.tannery.init;
 
 import com.minecraftuberverse.tannery.Reference;
 import com.minecraftuberverse.tannery.Tannery;
+import com.minecraftuberverse.tannery.item.EdibleAnimalPart;
 import com.minecraftuberverse.tannery.item.ItemCarcass;
 import com.minecraftuberverse.tannery.item.TanneryItem;
 import com.minecraftuberverse.tannery.util.CarcassType;
@@ -27,6 +28,7 @@ public class TanneryItems
 	public static ItemCarcass elkCarcass;
 	public static TanneryItem antler;
 	public static TanneryItem boneKnife;
+	public static EdibleAnimalPart animal_brain = (EdibleAnimalPart) new EdibleAnimalPart(2, 1.0F, true).setUnlocalizedName("animal_brain");
 
 	public static void init()
 	{
@@ -59,6 +61,7 @@ public class TanneryItems
 		register(elkCarcass);
 		register(antler);
 		register(boneKnife);
+		register(animal_brain);
 	}
 
 	private static void register(Item item)
@@ -81,6 +84,8 @@ public class TanneryItems
 		registerItemRenderer(sheepCarcass);
 		registerItemRenderer(elkCarcass);
 		registerItemRenderer(antler);
+		registerItemRenderer(boneKnife);
+		registerItemRenderer(animal_brain);
 	}
 
 	public static void registerItemRenderer(Item item)
