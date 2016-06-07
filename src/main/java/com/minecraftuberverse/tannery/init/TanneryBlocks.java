@@ -5,6 +5,7 @@ import com.minecraftuberverse.tannery.Tannery;
 import com.minecraftuberverse.tannery.block.processing.BlockGallows;
 import com.minecraftuberverse.tannery.block.processing.ButchersBlock;
 import com.minecraftuberverse.tannery.tileentity.TileEntityGallows;
+import com.minecraftuberverse.ubercore.tileentity.TileEntityMachine;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -22,14 +23,16 @@ public class TanneryBlocks
 	{
 		// This method gives the block it's properties
 		butcherBlock = new ButchersBlock();
+		registerBlock(butcherBlock);
+
 		gallowsBlock = new BlockGallows();
 		GameRegistry.registerTileEntity(TileEntityGallows.class, "tileEntityGallows");
-		register(butcherBlock);
-		register(gallowsBlock);
+		TileEntityMachine.registerMachine(TileEntityGallows.RECIPE_HANDLER_KEY, 1, 5);
+		registerBlock(gallowsBlock);
 	}
 
 	// This method adds the block into the game
-	private static void register(Block block)
+	private static void registerBlock(Block block)
 	{
 		GameRegistry.registerBlock(block, block.getUnlocalizedName().substring(5));
 	}

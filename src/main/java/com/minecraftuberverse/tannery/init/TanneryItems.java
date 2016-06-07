@@ -1,31 +1,32 @@
 package com.minecraftuberverse.tannery.init;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-
 import com.minecraftuberverse.tannery.Reference;
 import com.minecraftuberverse.tannery.Tannery;
 import com.minecraftuberverse.tannery.item.ItemCarcass;
 import com.minecraftuberverse.tannery.item.TanneryItem;
 import com.minecraftuberverse.tannery.util.CarcassType;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
 public class TanneryItems
 {
-	public static TanneryItem bloodyCowCarcass;
-	public static TanneryItem bloodyPigCarcass;
-	public static TanneryItem bloodySheepCarcass;
-	public static TanneryItem bloodyElkCarcass;
-	public static TanneryItem drainedCowCarcass;
-	public static TanneryItem drainedPigCarcass;
-	public static TanneryItem drainedSheepCarcass;
-	public static TanneryItem drainedElkCarcass;
-	public static TanneryItem cowCarcass;
-	public static TanneryItem pigCarcass;
-	public static TanneryItem sheepCarcass;
-	public static TanneryItem elkCarcass;
+	public static ItemCarcass bloodyCowCarcass;
+	public static ItemCarcass bloodyPigCarcass;
+	public static ItemCarcass bloodySheepCarcass;
+	public static ItemCarcass bloodyElkCarcass;
+	public static ItemCarcass drainedCowCarcass;
+	public static ItemCarcass drainedPigCarcass;
+	public static ItemCarcass drainedSheepCarcass;
+	public static ItemCarcass drainedElkCarcass;
+	public static ItemCarcass cowCarcass;
+	public static ItemCarcass pigCarcass;
+	public static ItemCarcass sheepCarcass;
+	public static ItemCarcass elkCarcass;
 	public static TanneryItem antler;
+	public static TanneryItem boneKnife;
 
 	public static void init()
 	{
@@ -42,6 +43,7 @@ public class TanneryItems
 		sheepCarcass = new ItemCarcass(CarcassType.SHEEP);
 		elkCarcass = new ItemCarcass(CarcassType.ELK);
 		antler = new TanneryItem("antler");
+		boneKnife = new TanneryItem("boneknife");
 
 		register(bloodyCowCarcass);
 		register(bloodyPigCarcass);
@@ -56,6 +58,7 @@ public class TanneryItems
 		register(sheepCarcass);
 		register(elkCarcass);
 		register(antler);
+		register(boneKnife);
 	}
 
 	private static void register(Item item)
