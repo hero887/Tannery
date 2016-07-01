@@ -1,6 +1,6 @@
-package com.minecraftuberverse.tannery.util;
+package com.minecraftuberverse.tannery.util.recipe;
 
-import com.minecraftuberverse.ubercore.util.DurationRecipe;
+import com.minecraftuberverse.ubercore.util.recipe.DurationRecipe;
 
 import net.minecraft.item.Item;
 

@@ -2,10 +2,11 @@ package com.minecraftuberverse.tannery.init;
 
 import com.minecraftuberverse.tannery.tileentity.TileEntityGallows;
 import com.minecraftuberverse.tannery.util.CarcassType;
-import com.minecraftuberverse.tannery.util.GallowsDrainingRecipe;
+import com.minecraftuberverse.tannery.util.recipe.ButchersBenchRecipe;
+import com.minecraftuberverse.tannery.util.recipe.GallowsDrainingRecipe;
 import com.minecraftuberverse.ubercore.tileentity.TileEntityMachine;
-import com.minecraftuberverse.ubercore.util.Recipe;
 import com.minecraftuberverse.ubercore.util.RecipeHandler;
+import com.minecraftuberverse.ubercore.util.recipe.Recipe;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -15,10 +16,21 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class TanneryRecipes
 {
+	public static RecipeHandler<ButchersBenchRecipe> butchersBenchRecipeHandler;
+
 	public static void init()
 	{
 		initVanillaRecipes();
 		initGallows();
+		initButchersBench();
+	}
+
+	private static void initButchersBench()
+	{
+		butchersBenchRecipeHandler = new RecipeHandler<>(1, 20);
+		butchersBenchRecipeHandler.register((ButchersBenchRecipe) new ButchersBenchRecipe()
+				.addInput(TanneryItems.cowCarcass)
+				.addOutput(Items.beef, Items.beef, Items.bone, Items.bone, Items.bone, Items.bone));
 	}
 
 	private static void initVanillaRecipes()

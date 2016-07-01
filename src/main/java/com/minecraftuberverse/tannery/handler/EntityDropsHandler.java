@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class EntityDropsHandler
 {
 	@SubscribeEvent
-	public void onEntityDrops(LivingDropsEvent event)
+	public void onLivingDrops(LivingDropsEvent event)
 	{
 		Entity e = event.entity;
 		List<EntityItem> drops = event.drops;

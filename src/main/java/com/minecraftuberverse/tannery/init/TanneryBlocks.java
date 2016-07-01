@@ -2,8 +2,8 @@ package com.minecraftuberverse.tannery.init;
 
 import com.minecraftuberverse.tannery.Reference;
 import com.minecraftuberverse.tannery.Tannery;
+import com.minecraftuberverse.tannery.block.processing.BlockButchersBench;
 import com.minecraftuberverse.tannery.block.processing.BlockGallows;
-import com.minecraftuberverse.tannery.block.processing.ButchersBlock;
 import com.minecraftuberverse.tannery.tileentity.TileEntityGallows;
 import com.minecraftuberverse.ubercore.tileentity.TileEntityMachine;
 
@@ -16,19 +16,19 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class TanneryBlocks
 {
 	// This makes the new block
-	public static Block butcherBlock;
-	public static Block gallowsBlock;
+	public static Block butcherBench;
+	public static Block gallows;
 
 	public static void init()
 	{
 		// This method gives the block it's properties
-		butcherBlock = new ButchersBlock();
-		registerBlock(butcherBlock);
+		butcherBench = new BlockButchersBench();
+		registerBlock(butcherBench);
 
-		gallowsBlock = new BlockGallows();
+		gallows = new BlockGallows();
 		GameRegistry.registerTileEntity(TileEntityGallows.class, "tileEntityGallows");
 		TileEntityMachine.registerMachine(TileEntityGallows.RECIPE_HANDLER_KEY, 1, 5);
-		registerBlock(gallowsBlock);
+		registerBlock(gallows);
 	}
 
 	// This method adds the block into the game
@@ -40,8 +40,8 @@ public class TanneryBlocks
 	// This method registers the block model
 	public static void registerRenderers()
 	{
-		registerRender(butcherBlock);
-		registerRender(gallowsBlock);
+		registerRender(butcherBench);
+		registerRender(gallows);
 	}
 
 	// This is used to make the registerRenders() method work

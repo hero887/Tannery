@@ -2,9 +2,7 @@ package com.minecraftuberverse.tannery.block.processing;
 
 import java.util.Random;
 
-import com.minecraftuberverse.tannery.Tannery;
 import com.minecraftuberverse.tannery.block.TanneryBlockDirectional;
-import com.minecraftuberverse.tannery.init.TanneryItems;
 import com.minecraftuberverse.tannery.tileentity.TileEntityGallows;
 import com.minecraftuberverse.tannery.util.CarcassType;
 
@@ -17,7 +15,6 @@ import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryHelper;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
@@ -34,70 +31,14 @@ public class BlockGallows extends TanneryBlockDirectional implements ITileEntity
 	{
 		super(Material.wood, "gallows");
 		this.setHardness(1.0f);
-		setDefaultState(getDefaultState().withProperty(CARCASS, CarcassType.NONE)
-				.withProperty(BLOODY, true));
+		setDefaultState(getDefaultState().withProperty(CARCASS, CarcassType.NONE));
 	}
 
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
 	{
 		TileEntityGallows tile = getTileEntity(worldIn, pos);
-		boolean boolOut = false;
-
-		if (tile.isDraining() && tile.isReady())
-		{
-			ItemStack out = tile.removeOutput()[0];
-			if (!playerIn.inventory.addItemStackToInventory(out)) spawnAsEntity(worldIn, pos, out);
-			boolOut = true;
-		}
-		else
-		{
-			ItemStack stack = playerIn.getCurrentEquippedItem();
-			if (stack != null && stack.getItem() == TanneryItems.boneKnife && !tile.isDraining())
-			{
-				ItemStack[] out = tile.removeOutput();
-
-				for (ItemStack i : out)
-				{
-					if (i != null) spawnAsEntity(worldIn, pos, i);
-				}
-				boolOut = true;
-			}
-			else
-			{
-				ItemStack[] in = tile.getInput();
-				if (in != null && in[0] != null)
-				{
-					ItemStack content = in[0];
-					ItemStack out = tile.removeInput()[0];
-					if (!playerIn.inventory.addItemStackToInventory(out)) spawnAsEntity(worldIn,
-							pos, out);
-					boolOut = true;
-				}
-				else
-				{
-					if (stack != null)
-					{
-						ItemStack stackIn = new ItemStack(stack.getItem(), 1);
-						if (!tile.getRecipeHandler(TileEntityGallows.RECIPE_HANDLER_KEY)
-								.isValidInput(stackIn)) return boolOut;
-						if (!worldIn.isRemote)
-						{
-							if (!playerIn.capabilities.isCreativeMode)
-							{
-								if (stack.stackSize > 1) stackIn = stack.splitStack(1);
-								else playerIn.inventory.setInventorySlotContents(
-										playerIn.inventory.currentItem, null);
-							}
-						}
-						tile.addInput(stackIn);
-						boolOut = true;
-					}
-				}
-			}
-		}
-		if (boolOut) tile.markDirty();
-		return false;
+		return tile.onRightClick(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ);
 	}
 
 	@Override
@@ -149,7 +90,7 @@ public class BlockGallows extends TanneryBlockDirectional implements ITileEntity
 	{
 		// TODO implement blood particles if the gallows is currently draining
 		super.updateTick(worldIn, pos, state, rand);
-		if (worldIn.isRemote && getTileEntity(worldIn, pos) != null && getTileEntity(worldIn, pos)
+		if (!worldIn.isRemote && getTileEntity(worldIn, pos) != null && getTileEntity(worldIn, pos)
 				.isDraining()) worldIn.spawnParticle(EnumParticleTypes.DRIP_LAVA, pos.getX(),
 						pos.getY(), pos.getZ(), ((double) (rand.nextInt(6) + 2)) / 10d, 1.2,
 						((double) (rand.nextInt(6) + 2)) / 10d, 20);
