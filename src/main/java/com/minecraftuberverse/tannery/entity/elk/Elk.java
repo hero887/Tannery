@@ -17,9 +17,7 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
@@ -35,7 +33,8 @@ public class Elk extends EntityAnimal
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIPanic(this, 2.0D));
 		this.tasks.addTask(2, new EntityAIMate(this, 1.0D));
-		this.tasks.addTask(3, new EntityAITempt(this, 1.25D, Item.getItemFromBlock(Blocks.grass), false));
+		this.tasks.addTask(3,
+				new EntityAITempt(this, 1.25D, Item.getItemFromBlock(Blocks.grass), false));
 		this.tasks.addTask(4, new EntityAIFollowParent(this, 1.25D));
 		this.tasks.addTask(5, new EntityAIWander(this, 1.0D));
 		this.tasks.addTask(5, new EntityAIEatGrass(this));
@@ -44,6 +43,7 @@ public class Elk extends EntityAnimal
 
 	}
 
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
@@ -52,47 +52,56 @@ public class Elk extends EntityAnimal
 				.setBaseValue(0.20000000298023224D);
 	}
 
+	@Override
 	protected String getLivingSound()
 	{
 		return "tannery:mob.elk.say";
 	}
 
+	@Override
 	protected String getHurtSound()
 	{
 		return "tannery:mob.elk.hurt";
 	}
 
+	@Override
 	protected String getDeathSound()
 	{
 		return "tannery:mob.elk.death";
 	}
 
+	@Override
 	protected void playStepSound(BlockPos p_180429_1_, Block p_180429_2_)
 	{
 		this.playSound("tannery:mob.elk.step", 0.15F, 1.0F);
 	}
 
+	@Override
 	protected float getSoundVolume()
 	{
 		return 0.4F;
 	}
 
+	@Override
 	protected Item getDropItem()
 	{
 		return TanneryItems.bloodyElkCarcass;
-		//return TanneryItems.antler;
+		// return TanneryItems.antler;
 	}
 
+	@Override
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_)
 	{
 		this.dropItem(getDropItem(), 1);
 	}
-	
+
+	@Override
 	public Elk createChild(EntityAgeable ageable)
 	{
 		return new Elk(this.worldObj);
 	}
 
+	@Override
 	public float getEyeHeight()
 	{
 		return this.height;

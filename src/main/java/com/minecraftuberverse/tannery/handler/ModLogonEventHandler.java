@@ -1,9 +1,6 @@
 package com.minecraftuberverse.tannery.handler;
 
-import java.util.Random;
-
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.event.ClickEvent;
 import net.minecraft.event.HoverEvent;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
@@ -18,7 +15,7 @@ public class ModLogonEventHandler
 	public void onPlayerLogin(PlayerLoggedInEvent e)
 	{
 		System.out.println("I blame George");
-		EntityPlayer player = (EntityPlayer) e.player;
+		EntityPlayer player = e.player;
 		if (!player.worldObj.isRemote)
 		{
 			ChatComponentText prefix = new ChatComponentText(
@@ -28,7 +25,6 @@ public class ModLogonEventHandler
 							"Made By SoggyMustache, Hero887, LewisMcReu, BubbleTrouble, TheJurrasicAlien, Wolfgank, RdV01")));
 			player.addChatMessage(prefix);
 
-
+		}
 	}
-}
 }

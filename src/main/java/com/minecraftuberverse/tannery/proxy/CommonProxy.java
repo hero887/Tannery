@@ -14,8 +14,8 @@ public abstract class CommonProxy
 {
 	public void preInit()
 	{
-		TanneryItems.init();
 		TanneryBlocks.init();
+		TanneryItems.init();
 		TanneryEntities.init();
 		FMLCommonHandler.instance().bus().register(new ModLogonEventHandler());
 		MinecraftForge.EVENT_BUS.register(new EntityDropsHandler());

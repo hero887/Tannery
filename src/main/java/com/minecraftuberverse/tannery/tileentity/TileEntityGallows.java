@@ -258,7 +258,8 @@ public class TileEntityGallows extends TileEntityMachineSingular
 					if (stack != null)
 					{
 						ItemStack stackIn = new ItemStack(stack.getItem(), 1);
-						if (!this.getRecipeHandler(TileEntityGallows.RECIPE_HANDLER_KEY)
+						if (!TileEntityMachine
+								.getRecipeHandler(TileEntityGallows.RECIPE_HANDLER_KEY)
 								.isValidInput(stackIn)) return boolOut;
 						if (!worldIn.isRemote)
 						{

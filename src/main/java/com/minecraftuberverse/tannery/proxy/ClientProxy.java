@@ -25,7 +25,9 @@ public class ClientProxy extends CommonProxy
 	{
 		TanneryItems.registerRenderers();
 		TanneryBlocks.registerRenderers();
-		RenderingRegistry.registerEntityRenderingHandler(Elk.class, new RenderElk(Minecraft.getMinecraft().getRenderManager(), new ModelElk(), 0));
-		RenderingRegistry.registerEntityRenderingHandler(ElkBaby.class, new RenderBabyElk(Minecraft.getMinecraft().getRenderManager(), new ModelBabyElk(), 0));
+		RenderingRegistry.registerEntityRenderingHandler(Elk.class,
+				new RenderElk(Minecraft.getMinecraft().getRenderManager(), new ModelElk(), 0));
+		RenderingRegistry.registerEntityRenderingHandler(ElkBaby.class, new RenderBabyElk(
+				Minecraft.getMinecraft().getRenderManager(), new ModelBabyElk(), 0));
 	}
 }

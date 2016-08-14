@@ -28,7 +28,8 @@ public class TanneryItems
 	public static ItemCarcass elkCarcass;
 	public static TanneryItem antler;
 	public static TanneryItem boneKnife;
-	public static EdibleAnimalPart animal_brain = (EdibleAnimalPart) new EdibleAnimalPart(2, 1.0F, true).setUnlocalizedName("animal_brain");
+	public static EdibleAnimalPart animal_brain = (EdibleAnimalPart) new EdibleAnimalPart(2, 1.0F,
+			true).setUnlocalizedName("animal_brain");
 
 	public static void init()
 	{

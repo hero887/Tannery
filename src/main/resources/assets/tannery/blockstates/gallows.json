@@ -1,198 +1,584 @@
 {
     "variants": 
     {
-        "inventory": 
+        "bloody=false,carcass=none,facing=north,part=top": 
         {
-            "model": "tannery:gallows"
+            "model": "tannery:gallows_top", 
+            "y": 0
         }, 
-        "bloody=false,carcass=none,facing=north": 
+        "bloody=false,carcass=cow,facing=north,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top", 
+            "y": 0
+        }, 
+        "bloody=false,carcass=elk,facing=north,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 0
+        }, 
+        "bloody=false,carcass=pig,facing=north,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 0
+        }, 
+        "bloody=false,carcass=sheep,facing=north,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 0
+        }, 
+        "bloody=true,carcass=none,facing=north,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 0
+        }, 
+        "bloody=true,carcass=cow,facing=north,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 0
+        }, 
+        "bloody=true,carcass=elk,facing=north,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 0
+        }, 
+        "bloody=true,carcass=pig,facing=north,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 0
+        }, 
+        "bloody=true,carcass=sheep,facing=north,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 0
+        }, 
+        "bloody=false,carcass=none,facing=south,part=top": 
+        {
+            "model": "tannery:gallows_top",
             "y": 180
         }, 
-        "bloody=false,carcass=cow,facing=north": 
+        "bloody=false,carcass=cow,facing=south,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top",
             "y": 180
         }, 
-        "bloody=false,carcass=elk,facing=north": 
+        "bloody=false,carcass=elk,facing=south,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top",
             "y": 180
         }, 
-        "bloody=false,carcass=pig,facing=north": 
+        "bloody=false,carcass=pig,facing=south,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top",
             "y": 180
         }, 
-        "bloody=false,carcass=sheep,facing=north": 
+        "bloody=false,carcass=sheep,facing=south,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top",
             "y": 180
         }, 
-        "bloody=true,carcass=none,facing=north": 
+        "bloody=true,carcass=none,facing=south,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top",
             "y": 180
         }, 
-        "bloody=true,carcass=cow,facing=north": 
+        "bloody=true,carcass=cow,facing=south,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top",
             "y": 180
         }, 
-        "bloody=true,carcass=elk,facing=north": 
+        "bloody=true,carcass=elk,facing=south,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top",
             "y": 180
         }, 
-        "bloody=true,carcass=pig,facing=north": 
+        "bloody=true,carcass=pig,facing=south,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top",
             "y": 180
         }, 
-        "bloody=true,carcass=sheep,facing=north": 
+        "bloody=true,carcass=sheep,facing=south,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top",
             "y": 180
         }, 
-        "bloody=false,carcass=none,facing=south": 
+        "bloody=false,carcass=none,facing=west,part=top": 
         {
-            "model": "tannery:gallows"
-        }, 
-        "bloody=false,carcass=cow,facing=south": 
-        {
-            "model": "tannery:gallows"
-        }, 
-        "bloody=false,carcass=elk,facing=south": 
-        {
-            "model": "tannery:gallows"
-        }, 
-        "bloody=false,carcass=pig,facing=south": 
-        {
-            "model": "tannery:gallows"
-        }, 
-        "bloody=false,carcass=sheep,facing=south": 
-        {
-            "model": "tannery:gallows"
-        }, 
-        "bloody=true,carcass=none,facing=south": 
-        {
-            "model": "tannery:gallows"
-        }, 
-        "bloody=true,carcass=cow,facing=south": 
-        {
-            "model": "tannery:gallows"
-        }, 
-        "bloody=true,carcass=elk,facing=south": 
-        {
-            "model": "tannery:gallows"
-        }, 
-        "bloody=true,carcass=pig,facing=south": 
-        {
-            "model": "tannery:gallows"
-        }, 
-        "bloody=true,carcass=sheep,facing=south": 
-        {
-            "model": "tannery:gallows"
-        }, 
-        "bloody=false,carcass=none,facing=west": 
-        {
-            "model": "tannery:gallows", 
-            "y": 90
-        }, 
-        "bloody=false,carcass=cow,facing=west": 
-        {
-            "model": "tannery:gallows", 
-            "y": 90
-        }, 
-        "bloody=false,carcass=elk,facing=west": 
-        {
-            "model": "tannery:gallows", 
-            "y": 90
-        }, 
-        "bloody=false,carcass=pig,facing=west": 
-        {
-            "model": "tannery:gallows", 
-            "y": 90
-        }, 
-        "bloody=false,carcass=sheep,facing=west": 
-        {
-            "model": "tannery:gallows", 
-            "y": 90
-        }, 
-        "bloody=true,carcass=none,facing=west": 
-        {
-            "model": "tannery:gallows", 
-            "y": 90
-        }, 
-        "bloody=true,carcass=cow,facing=west": 
-        {
-            "model": "tannery:gallows", 
-            "y": 90
-        }, 
-        "bloody=true,carcass=elk,facing=west": 
-        {
-            "model": "tannery:gallows", 
-            "y": 90
-        }, 
-        "bloody=true,carcass=pig,facing=west": 
-        {
-            "model": "tannery:gallows", 
-            "y": 90
-        }, 
-        "bloody=true,carcass=sheep,facing=west": 
-        {
-            "model": "tannery:gallows", 
-            "y": 90
-        }, 
-        "bloody=false,carcass=none,facing=east": 
-        {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top", 
             "y": 270
         }, 
-        "bloody=false,carcass=cow,facing=east": 
+        "bloody=false,carcass=cow,facing=west,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top", 
             "y": 270
         }, 
-        "bloody=false,carcass=elk,facing=east": 
+        "bloody=false,carcass=elk,facing=west,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top", 
             "y": 270
         }, 
-        "bloody=false,carcass=pig,facing=east": 
+        "bloody=false,carcass=pig,facing=west,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top", 
             "y": 270
         }, 
-        "bloody=false,carcass=sheep,facing=east": 
+        "bloody=false,carcass=sheep,facing=west,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top", 
             "y": 270
         }, 
-        "bloody=true,carcass=none,facing=east": 
+        "bloody=true,carcass=none,facing=west,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top", 
             "y": 270
         }, 
-        "bloody=true,carcass=cow,facing=east": 
+        "bloody=true,carcass=cow,facing=west,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top", 
             "y": 270
         }, 
-        "bloody=true,carcass=elk,facing=east": 
+        "bloody=true,carcass=elk,facing=west,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top", 
             "y": 270
         }, 
-        "bloody=true,carcass=pig,facing=east": 
+        "bloody=true,carcass=pig,facing=west,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top", 
             "y": 270
         }, 
-        "bloody=true,carcass=sheep,facing=east": 
+        "bloody=true,carcass=sheep,facing=west,part=top": 
         {
-            "model": "tannery:gallows", 
+            "model": "tannery:gallows_top", 
+            "y": 270
+        }, 
+        "bloody=false,carcass=none,facing=east,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=cow,facing=east,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=elk,facing=east,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=pig,facing=east,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=sheep,facing=east,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=none,facing=east,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=cow,facing=east,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=elk,facing=east,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=pig,facing=east,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=sheep,facing=east,part=top": 
+        {
+            "model": "tannery:gallows_top", 
+            "y": 90
+        },
+        "bloody=false,carcass=none,facing=south,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 180
+        }, 
+        "bloody=false,carcass=cow,facing=south,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 180
+        }, 
+        "bloody=false,carcass=elk,facing=south,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 180
+        }, 
+        "bloody=false,carcass=pig,facing=south,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 180
+        }, 
+        "bloody=false,carcass=sheep,facing=south,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 180
+        }, 
+        "bloody=true,carcass=none,facing=south,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 180
+        }, 
+        "bloody=true,carcass=cow,facing=south,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 180
+        }, 
+        "bloody=true,carcass=elk,facing=south,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 180
+        }, 
+        "bloody=true,carcass=pig,facing=south,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 180
+        }, 
+        "bloody=true,carcass=sheep,facing=south,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 180
+        }, 
+        "bloody=false,carcass=none,facing=north,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom"
+        }, 
+        "bloody=false,carcass=cow,facing=north,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom"
+        }, 
+        "bloody=false,carcass=elk,facing=north,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom"
+        }, 
+        "bloody=false,carcass=pig,facing=north,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom"
+        }, 
+        "bloody=false,carcass=sheep,facing=north,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom"
+        }, 
+        "bloody=true,carcass=none,facing=north,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom"
+        }, 
+        "bloody=true,carcass=cow,facing=north,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom"
+        }, 
+        "bloody=true,carcass=elk,facing=north,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom"
+        }, 
+        "bloody=true,carcass=pig,facing=north,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom"
+        }, 
+        "bloody=true,carcass=sheep,facing=north,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom"
+        }, 
+        "bloody=false,carcass=none,facing=west,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 270
+        }, 
+        "bloody=false,carcass=cow,facing=west,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 270
+        }, 
+        "bloody=false,carcass=elk,facing=west,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 270
+        }, 
+        "bloody=false,carcass=pig,facing=west,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 270
+        }, 
+        "bloody=false,carcass=sheep,facing=west,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 270
+        }, 
+        "bloody=true,carcass=none,facing=west,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 270
+        }, 
+        "bloody=true,carcass=cow,facing=west,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 270
+        }, 
+        "bloody=true,carcass=elk,facing=west,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 270
+        }, 
+        "bloody=true,carcass=pig,facing=west,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 270
+        }, 
+        "bloody=true,carcass=sheep,facing=west,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 270
+        }, 
+        "bloody=false,carcass=none,facing=east,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=cow,facing=east,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=elk,facing=east,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=pig,facing=east,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=sheep,facing=east,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=none,facing=east,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=cow,facing=east,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=elk,facing=east,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=pig,facing=east,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=sheep,facing=east,part=bottom": 
+        {
+            "model": "tannery:gallows_bottom", 
+            "y": 90
+        },
+        "bloody=false,carcass=none,facing=south,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 180
+        }, 
+        "bloody=false,carcass=cow,facing=south,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 180
+        }, 
+        "bloody=false,carcass=elk,facing=south,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 180
+        }, 
+        "bloody=false,carcass=pig,facing=south,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 180
+        }, 
+        "bloody=false,carcass=sheep,facing=south,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 180
+        }, 
+        "bloody=true,carcass=none,facing=south,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 180
+        }, 
+        "bloody=true,carcass=cow,facing=south,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 180
+        }, 
+        "bloody=true,carcass=elk,facing=south,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 180
+        }, 
+        "bloody=true,carcass=pig,facing=south,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 180
+        }, 
+        "bloody=true,carcass=sheep,facing=south,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 180
+        }, 
+        "bloody=false,carcass=none,facing=north,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft"
+        }, 
+        "bloody=false,carcass=cow,facing=north,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft"
+        }, 
+        "bloody=false,carcass=elk,facing=north,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft"
+        }, 
+        "bloody=false,carcass=pig,facing=north,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft"
+        }, 
+        "bloody=false,carcass=sheep,facing=north,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft"
+        }, 
+        "bloody=true,carcass=none,facing=north,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft"
+        }, 
+        "bloody=true,carcass=cow,facing=north,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft"
+        }, 
+        "bloody=true,carcass=elk,facing=north,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft"
+        }, 
+        "bloody=true,carcass=pig,facing=north,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft"
+        }, 
+        "bloody=true,carcass=sheep,facing=north,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft"
+        }, 
+        "bloody=false,carcass=none,facing=east,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=cow,facing=east,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=elk,facing=east,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=pig,facing=east,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=sheep,facing=east,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=none,facing=east,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=cow,facing=east,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=elk,facing=east,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=pig,facing=east,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 90
+        }, 
+        "bloody=true,carcass=sheep,facing=east,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 90
+        }, 
+        "bloody=false,carcass=none,facing=west,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 270
+        }, 
+        "bloody=false,carcass=cow,facing=west,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 270
+        }, 
+        "bloody=false,carcass=elk,facing=west,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 270
+        }, 
+        "bloody=false,carcass=pig,facing=west,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 270
+        }, 
+        "bloody=false,carcass=sheep,facing=west,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 270
+        }, 
+        "bloody=true,carcass=none,facing=west,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 270
+        }, 
+        "bloody=true,carcass=cow,facing=west,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 270
+        }, 
+        "bloody=true,carcass=elk,facing=west,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 270
+        }, 
+        "bloody=true,carcass=pig,facing=west,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
+            "y": 270
+        }, 
+        "bloody=true,carcass=sheep,facing=west,part=topleft": 
+        {
+            "model": "tannery:gallows_topleft", 
             "y": 270
         }
     }

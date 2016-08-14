@@ -37,8 +37,7 @@ public class TanneryBlockDirectional extends BlockDirectional
 	@Override
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
 	{
-		return worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos) && World
-				.doesBlockHaveSolidTopSurface(worldIn, pos.down());
+		return worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos);
 	}
 
 	@Override
@@ -51,7 +50,7 @@ public class TanneryBlockDirectional extends BlockDirectional
 	@Override
 	public IBlockState getStateFromMeta(int meta)
 	{
-		return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
+		return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta & 3));
 	}
 
 	@Override

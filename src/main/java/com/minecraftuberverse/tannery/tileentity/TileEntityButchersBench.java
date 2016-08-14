@@ -1,7 +1,5 @@
 package com.minecraftuberverse.tannery.tileentity;
 
-import java.util.Random;
-
 import com.minecraftuberverse.tannery.init.TanneryRecipes;
 import com.minecraftuberverse.ubercore.util.RecipeHandler;
 
@@ -16,7 +14,7 @@ public class TileEntityButchersBench extends TileEntityActionCrafter
 	@Override
 	public boolean onActivate()
 	{
-		
+
 		return false;
 	}
 }

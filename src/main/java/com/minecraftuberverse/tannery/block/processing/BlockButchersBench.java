@@ -94,7 +94,7 @@ public class BlockButchersBench extends TanneryBlockDirectional implements ITile
 		super.updateTick(worldIn, pos, state, rand);
 		if (!worldIn.isRemote && getTileEntity(worldIn, pos) != null && getTileEntity(worldIn, pos)
 				.isDraining()) worldIn.spawnParticle(EnumParticleTypes.DRIP_LAVA, pos.getX(),
-						pos.getY(), pos.getZ(), ((double) (rand.nextInt(6) + 2)) / 10d, 1.2,
-						((double) (rand.nextInt(6) + 2)) / 10d, 20);
+						pos.getY(), pos.getZ(), (rand.nextInt(6) + 2) / 10d, 1.2,
+						(rand.nextInt(6) + 2) / 10d, 20);
 	}
 }

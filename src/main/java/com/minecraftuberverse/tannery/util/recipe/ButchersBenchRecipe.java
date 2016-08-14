@@ -13,7 +13,7 @@ public class ButchersBenchRecipe extends Recipe
 	{
 		ArrayList<ItemStack> list = new ArrayList<>();
 
-		for (ItemStack stack : getOutputAsItemStacks())
+		for (ItemStack stack : super.getOutputAsItemStacks())
 		{
 			while (stack.stackSize > 1)
 			{
