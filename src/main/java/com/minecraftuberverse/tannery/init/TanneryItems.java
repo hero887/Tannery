@@ -28,6 +28,9 @@ public class TanneryItems
 	public static ItemCarcass elkCarcass;
 	public static TanneryItem antler;
 	public static TanneryItem boneKnife;
+	public static TanneryItem barkSpud;
+	public static TanneryItem bark;
+	public static TanneryItem sinew;
 	public static EdibleAnimalPart animal_brain = (EdibleAnimalPart) new EdibleAnimalPart(2, 1.0F,
 			true).setUnlocalizedName("animal_brain");
 
@@ -47,7 +50,13 @@ public class TanneryItems
 		elkCarcass = new ItemCarcass(CarcassType.ELK);
 		antler = new TanneryItem("antler");
 		boneKnife = new TanneryItem("boneknife");
-
+		barkSpud = new TanneryItem("barkSpud");
+		bark = new TanneryItem("bark");
+		sinew = new TanneryItem("sinew");
+		
+		register(sinew);
+		register(bark);
+		register(barkSpud);
 		register(bloodyCowCarcass);
 		register(bloodyPigCarcass);
 		register(bloodySheepCarcass);
@@ -72,6 +81,9 @@ public class TanneryItems
 
 	public static void registerRenderers()
 	{
+		registerItemRenderer(sinew);
+		registerItemRenderer(bark);
+		registerItemRenderer(barkSpud);
 		registerItemRenderer(bloodyCowCarcass);
 		registerItemRenderer(bloodyPigCarcass);
 		registerItemRenderer(bloodySheepCarcass);

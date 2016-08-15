@@ -68,6 +68,9 @@ public class TanneryRecipes
 				new Object[] { new ItemStack(Blocks.wool, 1, 14) });
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.string, 4),
 				new Object[] { new ItemStack(Blocks.wool, 1, 15) });
+		GameRegistry.addRecipe(new ItemStack(TanneryItems.boneKnife, 1), new Object[] {"  #", " !", "!  ", '#', Items.flint, '!', Items.bone});
+		GameRegistry.addShapelessRecipe(new ItemStack(TanneryItems.barkSpud, 1),
+				new Object[] {Items.flint, Items.stick, TanneryItems.sinew});
 	}
 
 	private static void initGallows()
