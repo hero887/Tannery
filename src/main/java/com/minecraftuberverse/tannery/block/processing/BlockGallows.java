@@ -58,7 +58,7 @@ public class BlockGallows extends TanneryBlockDirectional implements ITileEntity
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
 	{
 		TileEntityGallows tile = getTileEntity(world, pos, state);
-		return tile.onRightClick(world, pos, state, playerIn, side, hitX, hitY, hitZ);
+		return tile.onActivate(world, pos, playerIn, playerIn.getCurrentEquippedItem());
 	}
 
 	@Override
@@ -101,8 +101,8 @@ public class BlockGallows extends TanneryBlockDirectional implements ITileEntity
 		TileEntityGallows tile = getTileEntity(worldIn, pos, state);
 		state = super.getActualState(state, worldIn, pos);
 
-		if (tile != null) state = state.withProperty(CARCASS, CarcassType.NONE).withProperty(BLOODY,
-				false);
+		if (tile != null) state = state.withProperty(CARCASS, tile.getCarcassType())
+				.withProperty(BLOODY, !tile.isDrained());
 		return state;
 	}
 
@@ -140,8 +140,8 @@ public class BlockGallows extends TanneryBlockDirectional implements ITileEntity
 		// TODO implement blood particles if the gallows is currently draining
 		super.updateTick(worldIn, pos, state, rand);
 		if (!worldIn.isRemote && getTileEntity(worldIn, pos, state) != null && getTileEntity(
-				worldIn, pos, state).isDraining()) worldIn.spawnParticle(
-						EnumParticleTypes.DRIP_LAVA, pos.getX(), pos.getY() + 1, pos.getZ(),
+				worldIn, pos, state).isProcessing()) worldIn.spawnParticle(
+						EnumParticleTypes.BLOCK_DUST, pos.getX(), pos.getY() + 1, pos.getZ(),
 						(rand.nextInt(6) + 2) / 10d, 1.2, (rand.nextInt(6) + 2) / 10d, 20);
 	}
 

@@ -1,59 +1,66 @@
 package com.minecraftuberverse.tannery.tileentity;
 
-import com.minecraftuberverse.tannery.Reference;
-import com.minecraftuberverse.tannery.Tannery;
+import java.util.LinkedList;
+
 import com.minecraftuberverse.tannery.init.TanneryItems;
 import com.minecraftuberverse.tannery.item.ItemCarcass;
 import com.minecraftuberverse.tannery.util.CarcassType;
-import com.minecraftuberverse.tannery.util.recipe.GallowsDrainingRecipe;
-import com.minecraftuberverse.ubercore.tileentity.TileEntityMachine;
-import com.minecraftuberverse.ubercore.tileentity.TileEntityMachineSingular;
-import com.minecraftuberverse.ubercore.util.recipe.Recipe;
+import com.minecraftuberverse.tannery.util.recipe.IDurationRecipe;
+import com.minecraftuberverse.tannery.util.recipe.IRecipe;
+import com.minecraftuberverse.tannery.util.recipe.RecipeHandler;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.Constants.NBT;
 
-public class TileEntityGallows extends TileEntityMachineSingular
+public class TileEntityGallows extends TileEntity
+		implements IMachine, IInteractiveTileEntity, IInventory
 {
-	public static final String RECIPE_HANDLER_KEY = Reference.MOD_ID + ".gallows";
-	public static final String NBTKEY_DRAINED_CONTENT = "drained_content";
-	public static final String NBTKEY_DRAINING = "draining";
-	public static final String NBTKEY_CUTTING = "cutting";
+	public final static RecipeHandler recipeHandler = new RecipeHandler();
+	public final static String nbtProgress = "progress";
+	public final static String nbtInventory = "inventory";
+	public final static String nbt = "gallows";
 
-	private boolean draining = false;
-	private boolean cutting = false;
+	private ItemStack content;
+	private LinkedList<ItemStack> futureOutput;
+	private int progress;
+	private IRecipe current;
 
-	private ItemStack[] drainedOutputContent = new ItemStack[TileEntityMachine
-			.getOutputStackLimit(RECIPE_HANDLER_KEY)];
+	public TileEntityGallows()
+	{
+		super();
+		content = null;
+		progress = 0;
+		futureOutput = new LinkedList<ItemStack>();
+	}
 
 	@Override
-	protected String getRecipeHandlerKey()
+	public void writeToNBT(NBTTagCompound compound)
 	{
-		return RECIPE_HANDLER_KEY;
+		super.writeToNBT(compound);
+		NBTTagCompound sub = new NBTTagCompound();
+		sub.setInteger(nbtProgress, progress);
+		sub.setTag(nbtInventory, content != null ? content.writeToNBT(new NBTTagCompound()) : null);
+		compound.setTag(nbt, sub);
 	}
 
-	public CarcassType getCarcassType()
+	@Override
+	public void readFromNBT(NBTTagCompound compound)
 	{
-		return getContent() != null ? ((ItemCarcass) getContent().getItem())
-				.getCarcassType() : CarcassType.NONE;
-	}
-
-	public boolean isBloody()
-	{
-		return getContent() != null ? ((ItemCarcass) getContent().getItem()).isBloody() : false;
+		super.readFromNBT(compound);
+		NBTTagCompound sub = compound.getCompoundTag(nbt);
+		progress = sub.getInteger(nbtProgress);
+		content = ItemStack.loadItemStackFromNBT(sub.getCompoundTag(nbtInventory));
 	}
 
 	@Override
@@ -77,132 +84,117 @@ public class TileEntityGallows extends TileEntityMachineSingular
 		this.readFromNBT(pkt.getNbtCompound());
 	}
 
-	public boolean isDraining()
+	public boolean isDrained()
 	{
-		return draining;
+		return content != null ? ((ItemCarcass) content.getItem()).isBloody() : false;
 	}
 
-	public boolean isCutting()
+	public CarcassType getCarcassType()
 	{
-		return cutting;
+		return content != null ? ((ItemCarcass) content.getItem())
+				.getCarcassType() : CarcassType.NONE;
+	}
+
+	@Override
+	public boolean onActivate(World world, BlockPos pos, EntityPlayer player, ItemStack equipped)
+	{
+		if (!world.isRemote)
+		{
+			boolean boolOut = false;
+
+			if (content != null)
+			{
+				if (current instanceof IDurationRecipe || current == null)
+				{
+					current = null;
+					this.progress = 0;
+					if (!player.inventory.addItemStackToInventory(content)) Block
+							.spawnAsEntity(world, pos, content);
+					content = null;
+				}
+				else if (equipped != null && equipped
+						.getItem() == TanneryItems.boneKnife && isDrained())
+				{
+					if (current == null) this.current = getRecipeHandler().find(this);
+					if (current != null)
+					{
+						if (futureOutput.isEmpty()) for (ItemStack s : current.getOutput())
+							futureOutput.add(s);
+
+						Block.spawnAsEntity(world, pos, futureOutput.removeFirst());
+						equipped.damageItem(1, player);
+						if (futureOutput.isEmpty()) current = null;
+					}
+				}
+			}
+			else
+			{
+				if (isItemValidForSlot(0, equipped))
+				{
+					content = equipped.splitStack(1);
+					current = getRecipeHandler().find(this);
+				}
+			}
+			if (boolOut) this.markDirty();
+			return boolOut;
+		}
+		return false;
 	}
 
 	@Override
 	public void update()
 	{
-		super.update();
-		if (getActiveRecipe() instanceof GallowsDrainingRecipe && !isReady())
+		if (current instanceof IDurationRecipe)
 		{
-			draining = true;
-			markDirty();
-		}
-		else if (getActiveRecipe() instanceof Recipe)
-		{
-			Tannery.logger.info("Cutting!");
-			if (!draining && !cutting) setOutput(getActiveRecipe().getOutputAsItemStacks());
-			draining = false;
-			markDirty();
-		}
-	}
-
-	@Override
-	public void setOutput(ItemStack[] output)
-	{
-		if (draining) super.setOutput(output);
-		else drainedOutputContent = output;
-	}
-
-	@Override
-	public void addInput(ItemStack stack)
-	{
-		super.addInput(stack);
-		if (!isBloody()) selectActiveRecipe();
-	}
-
-	@Override
-	public ItemStack[] removeInput()
-	{
-		if (!cutting) return super.removeInput();
-		else
-		{
-			cutting = false;
-			draining = false;
-			return new ItemStack[] {};
-		}
-	}
-
-	@Override
-	public ItemStack[] removeOutput()
-	{
-		if (isReady() && draining) draining = false;
-		if (draining) return super.removeOutput();
-		else
-		{
-			ItemStack out = null;
-			cutting = true;
-			for (int i = 0; i < drainedOutputContent.length; i++)
+			if (progress >= ((IDurationRecipe) current).getDuration())
 			{
-				ItemStack is = drainedOutputContent[i];
-				if (is != null)
-				{
-					out = is;
-					drainedOutputContent[i] = null;
-					break;
-				}
+				this.content = current.craft(this, worldObj, pos)[0];
+				current = null;
+				markDirty();
 			}
-			ItemStack testNext = null;
-			for (int i = 0; i < drainedOutputContent.length; i++)
-			{
-				ItemStack is = drainedOutputContent[i];
-				if (is != null)
-				{
-					testNext = is;
-					drainedOutputContent[i] = null;
-					break;
-				}
-			}
-			if (testNext == null)
-			{
-				setContent(null);
-				cutting = false;
-			}
-			return new ItemStack[] { out };
+			else progress++;
 		}
 	}
 
 	@Override
-	public void writeToNBT(NBTTagCompound compound)
+	public ItemStack[] getContents()
 	{
-		super.writeToNBT(compound);
-		NBTTagList list = new NBTTagList();
-		for (ItemStack stack : drainedOutputContent)
-		{
-			if (stack != null) list.appendTag(stack.writeToNBT(new NBTTagCompound()));
-		}
-		compound.setTag(NBTKEY_DRAINED_CONTENT, list);
-		compound.setBoolean(NBTKEY_DRAINING, draining);
-		compound.setBoolean(NBTKEY_CUTTING, cutting);
+		return new ItemStack[] { content };
 	}
 
 	@Override
-	public void readFromNBT(NBTTagCompound compound)
+	public int getProgress()
 	{
-		super.readFromNBT(compound);
-		NBTTagList list = compound.getTagList(NBTKEY_DRAINED_CONTENT, NBT.TAG_COMPOUND);
-		ItemStack[] output = new ItemStack[list.tagCount()];
-		for (int i = 0; i < list.tagCount(); i++)
-		{
-			output[i] = ItemStack.loadItemStackFromNBT(list.getCompoundTagAt(i));
-		}
-		drainedOutputContent = output;
-		draining = compound.getBoolean(NBTKEY_DRAINING);
-		cutting = compound.getBoolean(NBTKEY_CUTTING);
+		return progress;
+	}
+
+	@Override
+	public boolean isReady()
+	{
+		return this.content != null ? this.current instanceof IDurationRecipe && this.progress >= getDuration() : false;
+	}
+
+	public boolean isProcessing()
+	{
+		return !isReady();
+	}
+
+	@Override
+	public int getDuration()
+	{
+		return current instanceof IDurationRecipe ? ((IDurationRecipe) current).getDuration() : -1;
+	}
+
+	@Override
+	public RecipeHandler getRecipeHandler()
+	{
+		return recipeHandler;
 	}
 
 	@Override
 	public String getName()
 	{
-		return "gallows";
+		return null;
 	}
 
 	@Override
@@ -214,69 +206,87 @@ public class TileEntityGallows extends TileEntityMachineSingular
 	@Override
 	public IChatComponent getDisplayName()
 	{
-		return new ChatComponentText(getName());
+		return null;
 	}
 
 	@Override
-	public boolean onRightClick(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
+	public int getSizeInventory()
 	{
-		boolean boolOut = false;
+		return 1;
+	}
 
-		if (this.isDraining() && this.isReady())
-		{
-			ItemStack out = this.removeOutput()[0];
-			if (!playerIn.inventory.addItemStackToInventory(out)) Block.spawnAsEntity(worldIn, pos,
-					out);
-			boolOut = true;
-		}
-		else
-		{
-			ItemStack stack = playerIn.getCurrentEquippedItem();
-			if (stack != null && stack.getItem() == TanneryItems.boneKnife && !this.isDraining())
-			{
-				ItemStack[] out = this.removeOutput();
+	@Override
+	public ItemStack getStackInSlot(int index)
+	{
+		return content;
+	}
 
-				for (ItemStack i : out)
-				{
-					if (i != null) Block.spawnAsEntity(worldIn, pos, i);
-				}
-				boolOut = true;
-			}
-			else
-			{
-				ItemStack[] in = this.getInput();
-				if (in != null && in[0] != null)
-				{
-					ItemStack content = in[0];
-					ItemStack out = this.removeInput()[0];
-					if (!playerIn.inventory.addItemStackToInventory(out)) Block
-							.spawnAsEntity(worldIn, pos, out);
-					boolOut = true;
-				}
-				else
-				{
-					if (stack != null)
-					{
-						ItemStack stackIn = new ItemStack(stack.getItem(), 1);
-						if (!TileEntityMachine
-								.getRecipeHandler(TileEntityGallows.RECIPE_HANDLER_KEY)
-								.isValidInput(stackIn)) return boolOut;
-						if (!worldIn.isRemote)
-						{
-							if (!playerIn.capabilities.isCreativeMode)
-							{
-								if (stack.stackSize > 1) stackIn = stack.splitStack(1);
-								else playerIn.inventory.setInventorySlotContents(
-										playerIn.inventory.currentItem, null);
-							}
-						}
-						this.addInput(stackIn);
-						boolOut = true;
-					}
-				}
-			}
-		}
-		if (boolOut) this.markDirty();
-		return boolOut;
+	@Override
+	public ItemStack decrStackSize(int index, int count)
+	{
+		return null;
+	}
+
+	@Override
+	public ItemStack getStackInSlotOnClosing(int index)
+	{
+		return content;
+	}
+
+	@Override
+	public void setInventorySlotContents(int index, ItemStack stack)
+	{
+		this.content = stack;
+	}
+
+	@Override
+	public int getInventoryStackLimit()
+	{
+		return 1;
+	}
+
+	@Override
+	public boolean isUseableByPlayer(EntityPlayer player)
+	{
+		return true;
+	}
+
+	@Override
+	public void openInventory(EntityPlayer player)
+	{
+	}
+
+	@Override
+	public void closeInventory(EntityPlayer player)
+	{
+	}
+
+	@Override
+	public boolean isItemValidForSlot(int index, ItemStack stack)
+	{
+		return stack.getItem() instanceof ItemCarcass;
+	}
+
+	@Override
+	public int getField(int id)
+	{
+		return 0;
+	}
+
+	@Override
+	public void setField(int id, int value)
+	{
+	}
+
+	@Override
+	public int getFieldCount()
+	{
+		return 0;
+	}
+
+	@Override
+	public void clear()
+	{
+		this.content = null;
 	}
 }

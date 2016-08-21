@@ -1,7 +1,8 @@
 package com.minecraftuberverse.tannery;
 
+import org.apache.logging.log4j.Logger;
+
 import com.minecraftuberverse.tannery.proxy.CommonProxy;
-import com.minecraftuberverse.ubercore.util.Logger;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -30,7 +31,7 @@ public class Tannery
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		logger = new Logger(Reference.MOD_NAME);
+		logger = event.getModLog();
 
 		tabTannery = new CreativeTabs(CreativeTabs.getNextID(), "tabTannery")
 		{
