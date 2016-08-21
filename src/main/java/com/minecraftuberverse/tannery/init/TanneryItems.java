@@ -33,6 +33,9 @@ public class TanneryItems
 	public static TanneryItem sheepskin;
 	public static TanneryItem cowHide;
 	public static TanneryItem elkhide;
+	public static TanneryItem barkSpud;
+	public static TanneryItem bark;
+	public static TanneryItem sinew;
 
 	public static void init()
 	{
@@ -55,7 +58,14 @@ public class TanneryItems
 		cowHide = new TanneryItem("cowhide");
 		elkhide = new TanneryItem("elkhide");
 		animal_brain = new EdibleAnimalPart("animal_brain", 2, 1.0F, true);
-
+		boneKnife = new TanneryItem("boneknife");
+		barkSpud = new TanneryItem("barkSpud");
+		bark = new TanneryItem("bark");
+		sinew = new TanneryItem("sinew");
+		
+		register(sinew);
+		register(bark);
+		register(barkSpud);
 		register(bloodyCowCarcass);
 		register(bloodyPigCarcass);
 		register(bloodySheepCarcass);
@@ -84,6 +94,9 @@ public class TanneryItems
 
 	public static void registerRenderers()
 	{
+		registerItemRenderer(sinew);
+		registerItemRenderer(bark);
+		registerItemRenderer(barkSpud);
 		registerItemRenderer(bloodyCowCarcass);
 		registerItemRenderer(bloodyPigCarcass);
 		registerItemRenderer(bloodySheepCarcass);
