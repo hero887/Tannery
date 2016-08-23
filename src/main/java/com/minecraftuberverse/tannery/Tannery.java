@@ -2,10 +2,10 @@ package com.minecraftuberverse.tannery;
 
 import org.apache.logging.log4j.Logger;
 
+import com.minecraftuberverse.tannery.init.TanneryItems;
 import com.minecraftuberverse.tannery.proxy.CommonProxy;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -38,8 +38,7 @@ public class Tannery
 			@Override
 			public Item getTabIconItem()
 			{
-				// TODO Assign proper item as icon
-				return Items.leather;
+				return TanneryItems.cowHide;
 			}
 		};
 		proxy.preInit();

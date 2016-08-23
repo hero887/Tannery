@@ -62,9 +62,10 @@ public class TanneryRecipes
 		// Butchers Bench Recipe
 		GameRegistry.addRecipe(new ItemStack(TanneryBlocks.butcherBench), "AAA", "BBB", "CCC", 'A',
 				Blocks.wooden_slab, 'B', Blocks.planks, 'C', Blocks.stone_slab);
-		GameRegistry.addRecipe(new ItemStack(TanneryItems.boneKnife, 1), new Object[] {"  #", " !", "!  ", '#', Items.flint, '!', Items.bone});
+		GameRegistry.addRecipe(new ItemStack(TanneryItems.boneKnife, 1), "  #", " !", "!  ", '#',
+				Items.flint, '!', Items.bone);
 		GameRegistry.addShapelessRecipe(new ItemStack(TanneryItems.barkSpud, 1),
-				new Object[] {Items.flint, Items.stick, TanneryItems.sinew});
+				new Object[] { Items.flint, Items.stick, TanneryItems.sinew });
 	}
 
 	private static void initButchersBench()
