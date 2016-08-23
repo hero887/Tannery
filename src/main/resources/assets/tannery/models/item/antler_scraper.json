@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "tannery:items/antler_scraper”
+        "layer0": "tannery:items/antler_scraper"
     },
     "display": {
         "thirdperson": {

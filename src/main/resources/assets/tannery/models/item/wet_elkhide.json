@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "tannery:items/wet_elkhide”
+        "layer0": "tannery:items/wet_elkhide"
     },
     "display": {
         "thirdperson": {

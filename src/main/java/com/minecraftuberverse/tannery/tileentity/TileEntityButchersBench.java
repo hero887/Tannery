@@ -118,7 +118,8 @@ public class TileEntityButchersBench extends TileEntity
 	{
 		super.readFromNBT(compound);
 		NBTTagCompound sub = compound.getCompoundTag(nbt);
-		content = ItemStack.loadItemStackFromNBT(sub.getCompoundTag(nbtInventory));
+		NBTTagCompound inv = sub.getCompoundTag(nbtInventory);
+		if (inv != null) content = ItemStack.loadItemStackFromNBT(inv);
 	}
 
 	@Override

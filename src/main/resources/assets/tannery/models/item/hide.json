@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "tannery:items/hide”
+        "layer0": "tannery:items/hide"
     },
     "display": {
         "thirdperson": {

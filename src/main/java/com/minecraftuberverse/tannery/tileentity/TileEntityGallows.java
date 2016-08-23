@@ -50,7 +50,12 @@ public class TileEntityGallows extends TileEntity
 		super.writeToNBT(compound);
 		NBTTagCompound sub = new NBTTagCompound();
 		sub.setInteger(nbtProgress, progress);
-		sub.setTag(nbtInventory, content != null ? content.writeToNBT(new NBTTagCompound()) : null);
+		if (content != null)
+		{
+			NBTTagCompound n = new NBTTagCompound();
+			content.writeToNBT(n);
+			sub.setTag(nbtInventory, n);
+		}
 		compound.setTag(nbt, sub);
 	}
 
@@ -60,7 +65,8 @@ public class TileEntityGallows extends TileEntity
 		super.readFromNBT(compound);
 		NBTTagCompound sub = compound.getCompoundTag(nbt);
 		progress = sub.getInteger(nbtProgress);
-		content = ItemStack.loadItemStackFromNBT(sub.getCompoundTag(nbtInventory));
+		NBTTagCompound inv = sub.getCompoundTag(nbtInventory);
+		if (inv != null) content = ItemStack.loadItemStackFromNBT(inv);
 	}
 
 	@Override

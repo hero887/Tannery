@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "tannery:items/gallows”
+        "layer0": "tannery:items/gallows"
     },
     "display": {
         "thirdperson": {
