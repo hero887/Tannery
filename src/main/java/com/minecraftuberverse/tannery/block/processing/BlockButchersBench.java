@@ -1,7 +1,7 @@
 package com.minecraftuberverse.tannery.block.processing;
 
 import com.minecraftuberverse.tannery.Tannery;
-import com.minecraftuberverse.tannery.block.TanneryBlockDirectional;
+import com.minecraftuberverse.tannery.block.TanneryBlockHorizontalDirectional;
 import com.minecraftuberverse.tannery.tileentity.TileEntityButchersBench;
 
 import net.minecraft.block.ITileEntityProvider;
@@ -15,7 +15,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockButchersBench extends TanneryBlockDirectional implements ITileEntityProvider
+public class BlockButchersBench extends TanneryBlockHorizontalDirectional implements ITileEntityProvider
 {
 	public BlockButchersBench()
 	{

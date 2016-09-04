@@ -2,7 +2,7 @@ package com.minecraftuberverse.tannery.block.processing;
 
 import java.util.Random;
 
-import com.minecraftuberverse.tannery.block.TanneryBlockDirectional;
+import com.minecraftuberverse.tannery.block.TanneryBlockHorizontalDirectional;
 import com.minecraftuberverse.tannery.tileentity.TileEntityGallows;
 import com.minecraftuberverse.tannery.util.CarcassType;
 
@@ -26,7 +26,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockGallows extends TanneryBlockDirectional implements ITileEntityProvider
+public class BlockGallows extends TanneryBlockHorizontalDirectional implements ITileEntityProvider
 {
 	public static final PropertyEnum CARCASS = PropertyEnum.create("carcass", CarcassType.class);
 	public static final PropertyBool BLOODY = PropertyBool.create("bloody");
