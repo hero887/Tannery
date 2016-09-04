@@ -27,7 +27,7 @@ targetCompatibility=1.8
 
 version = "1.8-alpha"
 group= "com.minecraftuberverse.tannery" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "Tannery"
+archivesBaseName = "tannery"
 
 minecraft {
     version = "1.8-11.14.4.1563"
