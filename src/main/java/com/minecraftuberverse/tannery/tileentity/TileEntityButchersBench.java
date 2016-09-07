@@ -22,8 +22,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.world.World;
 
-public class TileEntityButchersBench extends TileEntity
-		implements IInteractiveTileEntity, IInventory, IContainer
+public class TileEntityButchersBench extends TileEntity implements IInteractiveTileEntity, IInventory, IContainer
 {
 	public final static RecipeHandler recipeHandler = new RecipeHandler();
 	public final static String nbtInventory = "inventory";
@@ -100,8 +99,7 @@ public class TileEntityButchersBench extends TileEntity
 
 	public CarcassType getCarcassType()
 	{
-		return content != null ? ((ItemCarcass) content.getItem())
-				.getCarcassType() : CarcassType.NONE;
+		return content != null ? ((ItemCarcass) content.getItem()).getCarcassType() : CarcassType.NONE;
 	}
 
 	@Override
@@ -109,7 +107,7 @@ public class TileEntityButchersBench extends TileEntity
 	{
 		super.writeToNBT(compound);
 		NBTTagCompound sub = new NBTTagCompound();
-		sub.setTag(nbtInventory, content != null ? content.writeToNBT(new NBTTagCompound()) : null);
+		if (content != null) sub.setTag(nbtInventory, content.writeToNBT(new NBTTagCompound()));
 		compound.setTag(nbt, sub);
 	}
 
@@ -166,8 +164,7 @@ public class TileEntityButchersBench extends TileEntity
 
 	@Override
 	public void setInventorySlotContents(int index, ItemStack stack)
-	{
-	}
+	{}
 
 	@Override
 	public int getInventoryStackLimit()
@@ -183,13 +180,11 @@ public class TileEntityButchersBench extends TileEntity
 
 	@Override
 	public void openInventory(EntityPlayer player)
-	{
-	}
+	{}
 
 	@Override
 	public void closeInventory(EntityPlayer player)
-	{
-	}
+	{}
 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack)
@@ -205,8 +200,7 @@ public class TileEntityButchersBench extends TileEntity
 
 	@Override
 	public void setField(int id, int value)
-	{
-	}
+	{}
 
 	@Override
 	public int getFieldCount()
