@@ -1,0 +1,23 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "textures": {
+    	"particle": "tannery:blocks/quebrachoInnerLog",
+        "0": "tannery:blocks/quebrachoInnerLog",
+        "1": "tannery:blocks/quebrachoLogTB"
+    },
+    "elements": [
+        {
+            "name": "InnerLog",
+            "from": [ 1.0, 0.0, 1.0 ], 
+            "to": [ 14.999999985098839, 16.0, 14.999999985098839 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 2.0, 16.0 ] },
+                "east": { "texture": "#0", "uv": [ 0.0, 0.0, 2.0, 16.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 0.0, 2.0, 16.0 ] },
+                "west": { "texture": "#0", "uv": [ 0.0, 0.0, 2.0, 16.0 ] },
+                "up": { "texture": "#1", "uv": [ 1.0, 1.0, 15.0, 15.0 ] },
+                "down": { "texture": "#1", "uv": [ 1.0, 1.0, 15.0, 15.0 ] }
+            }
+        }
+    ]
+}

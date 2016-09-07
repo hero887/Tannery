@@ -1,0 +1,64 @@
+{
+	"variants": {
+		"axis=x,state=0": {
+			"model": "tannery:logQuebracho",
+			"x": 90,
+			"y": 90
+		},
+		"axis=x,state=1": {
+			"model": "tannery:logQuebrachoStripped1",
+			"x": 90,
+			"y": 90
+		},
+		"axis=x,state=2": {
+			"model": "tannery:logQuebrachoStripped3",
+			"x": 90,
+			"y": 90
+		},
+		"axis=x,state=3": {
+			"model": "tannery:logQuebrachoInner",
+			"x": 90,
+			"y": 90
+		},
+		"axis=y,state=0": {
+			"model": "tannery:logQuebracho"
+		},
+		"axis=y,state=1": {
+			"model": "tannery:logQuebrachoStripped1"
+		},
+		"axis=y,state=2": {
+			"model": "tannery:logQuebrachoStripped3"
+		},
+		"axis=y,state=3": {
+			"model": "tannery:logQuebrachoInner"
+		},
+		"axis=z,state=0": {
+			"model": "tannery:logQuebracho",
+			"x": 90
+		},
+		"axis=z,state=1": {
+			"model": "tannery:logQuebrachoStripped1",
+			"x": 90
+		},
+		"axis=z,state=2": {
+			"model": "tannery:logQuebrachoStripped3",
+			"x": 90
+		},
+		"axis=z,state=3": {
+			"model": "tannery:logQuebrachoInner",
+			"x": 90
+		},
+		"axis=none,state=0": {
+			"model": "tannery:logQuebracho"
+		},
+		"axis=none,state=1": {
+			"model": "tannery:logQuebrachoStripped1"
+		},
+		"axis=none,state=2": {
+			"model": "tannery:logQuebrachoStripped3"
+		},
+		"axis=none,state=3": {
+			"model": "tannery:logQuebrachoInner"
+		}
+	}
+}
